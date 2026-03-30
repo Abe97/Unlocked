@@ -142,6 +142,19 @@
   gap: 4px;
 }
 
+.hero-brand-logo {
+  display: block;
+  width: auto;
+  max-width: 100px;
+  height: auto;
+  max-height: 28px;
+  object-fit: contain;
+  object-position: left center;
+  opacity: 0.6;
+  filter: brightness(0) invert(1);
+  margin-bottom: 4px;
+}
+
 .hero-event-label {
   font-size: 8px;
   font-weight: 500;

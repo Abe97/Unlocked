@@ -52,13 +52,24 @@ function populateHero(config, lang) {
 
   const style = getBrandStyle(upcoming.brandIntensity)
 
-  const labelEl = eventBlock.querySelector('.hero-event-label')
-  const dateEl  = eventBlock.querySelector('.hero-event-date')
-  const locEl   = eventBlock.querySelector('.hero-event-location')
-  const tagEl   = eventBlock.querySelector('.hero-tag')
-  const ctaEl   = eventBlock.querySelector('.hero-cta')
+  const labelEl   = eventBlock.querySelector('.hero-event-label')
+  const logoEl    = eventBlock.querySelector('.hero-brand-logo')
+  const dateEl    = eventBlock.querySelector('.hero-event-date')
+  const locEl     = eventBlock.querySelector('.hero-event-location')
+  const tagEl     = eventBlock.querySelector('.hero-tag')
+  const ctaEl     = eventBlock.querySelector('.hero-cta')
 
   if (labelEl) labelEl.textContent = ui.hero.nextEventLabel
+  if (logoEl) {
+    const logoSrc = getBrandLogo(upcoming.brand)
+    if (logoSrc) {
+      logoEl.src = logoSrc
+      logoEl.alt = upcoming.brand
+      logoEl.style.display = 'block'
+    } else {
+      logoEl.style.display = 'none'
+    }
+  }
   if (dateEl)  {
     dateEl.textContent = upcoming.date[lang]
     dateEl.style.color = style.color
