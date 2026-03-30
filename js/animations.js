@@ -109,29 +109,48 @@ function initHeroAnimation() {
   }, '-=0.4')
 }
 
-// ── Marquee ───────────────────────────────────────────────────────────
+// ── Artists vertical scroll ───────────────────────────────────────────
 function initMarquee() {
-  const track = document.querySelector('.marquee-track')
-  const wrap  = document.querySelector('.marquee-wrap')
-  if (!track || !wrap) return
+  const trackLeft  = document.getElementById('artists-track-left')
+  const trackRight = document.getElementById('artists-track-right')
+  if (!trackLeft || !trackRight) return
 
-  const obj = { speed: 1 }
-  let x = 0
+  const section = document.querySelector('.section-artists')
 
-  const totalWidth = track.scrollWidth / 2
+  // Wait for DOM to be painted so heights are correct
+  requestAnimationFrame(() => {
+    const itemHeight = trackLeft.querySelector('.artist-name')?.offsetHeight || 80
+    const leftList   = trackLeft.querySelectorAll('.artist-name')
+    const rightList  = trackRight.querySelectorAll('.artist-name')
 
-  gsap.ticker.add(() => {
-    x -= obj.speed * 0.8
-    if (Math.abs(x) >= totalWidth) x = 0
-    track.style.transform = `translateX(${x}px)`
-  })
+    // Each column has 3× the list — we scroll 1/3 then reset
+    const leftUnit  = (leftList.length  / 3) * itemHeight
+    const rightUnit = (rightList.length / 3) * itemHeight
 
-  wrap.addEventListener('mouseenter', () => {
-    gsap.to(obj, { speed: 0, duration: 0.4, ease: 'power2.out' })
-  })
+    const speed = { left: 0.4, right: 0.4 }
+    let yLeft  = 0
+    let yRight = -rightUnit  // start offset so cols are staggered
 
-  wrap.addEventListener('mouseleave', () => {
-    gsap.to(obj, { speed: 1, duration: 0.5, ease: 'power2.inOut' })
+    gsap.ticker.add(() => {
+      yLeft  -= speed.left
+      yRight += speed.right
+
+      if (Math.abs(yLeft)  >= leftUnit)  yLeft  = 0
+      if (yRight >= 0)                   yRight = -rightUnit
+
+      trackLeft.style.transform  = `translateY(${yLeft}px)`
+      trackRight.style.transform = `translateY(${yRight}px)`
+    })
+
+    // Slow down on section hover
+    if (section) {
+      section.addEventListener('mouseenter', () => {
+        gsap.to(speed, { left: 0.08, right: 0.08, duration: 0.6, ease: 'power2.out' })
+      })
+      section.addEventListener('mouseleave', () => {
+        gsap.to(speed, { left: 0.4, right: 0.4, duration: 0.5, ease: 'power2.inOut' })
+      })
+    }
   })
 }
 

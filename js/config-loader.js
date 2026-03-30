@@ -112,18 +112,25 @@ function startCountdown(dateISO, labels) {
   setInterval(tick, 1000)
 }
 
-// ── Marquee ──────────────────────────────────────────────────────────
+// ── Artists vertical scroll ───────────────────────────────────────────
 function populateMarquee(config) {
-  const track = document.querySelector('.marquee-track')
-  if (!track) return
+  const trackLeft  = document.getElementById('artists-track-left')
+  const trackRight = document.getElementById('artists-track-right')
+  if (!trackLeft || !trackRight) return
 
   const artists = config.artists.marquee
-  // Duplicate for infinite scroll
-  const set = [...artists, ...artists]
+  const mid = Math.ceil(artists.length / 2)
+  const leftList  = artists.slice(0, mid)
+  const rightList = artists.slice(mid)
 
-  track.innerHTML = set.map(name =>
-    `<span class="mq-item">${name}<span class="mq-sep"></span></span>`
-  ).join('')
+  // Triplicate for seamless infinite scroll
+  const renderCol = (list) =>
+    [...list, ...list, ...list]
+      .map(name => `<div class="artist-name">${name}</div>`)
+      .join('')
+
+  trackLeft.innerHTML  = renderCol(leftList)
+  trackRight.innerHTML = renderCol(rightList)
 }
 
 // ── Events ───────────────────────────────────────────────────────────
