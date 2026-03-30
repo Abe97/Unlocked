@@ -19,6 +19,7 @@ function initAnimations(config) {
   initNavAnimation()
   initHeroAnimation()
   initMarquee()
+  initImageInterludes()
   initEventsAnimation()
   initBrandsAnimation()
   initHistoryAnimation()
@@ -459,6 +460,46 @@ function initCursor() {
     el.addEventListener('mouseleave', () => {
       gsap.to(cursor, { scale: 1, duration: 0.3, ease: 'power2.out' })
     })
+  })
+}
+
+// ── Image interludes: clip-path reveal + scale parallax ──────────────
+function initImageInterludes() {
+  gsap.utils.toArray('.img-interlude').forEach(el => {
+    const inner = el.querySelector('.img-interlude-inner')
+
+    // Clip-path: expand from 6% side margins to full width on scroll
+    gsap.fromTo(el,
+      { clipPath: 'inset(0 6% 0 6%)' },
+      {
+        clipPath: 'inset(0 0% 0 0%)',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+          end: 'top 15%',
+          scrub: 0.8
+        }
+      }
+    )
+
+    // Parallax: inner image drifts up slower than scroll
+    if (inner) {
+      gsap.fromTo(inner,
+        { y: '0%' },
+        {
+          y: '-12%',
+          ease: 'none',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+            invalidateOnRefresh: true
+          }
+        }
+      )
+    }
   })
 }
 
