@@ -172,15 +172,14 @@ function populateEvents(config, lang) {
     <article class="event-card ${brandClass} ${tbaClass}" data-event-id="${event.id}">
       <div class="card-date-col">
         <div class="card-date-day" style="color:${style.color}">${date}</div>
-        <div class="card-date-info">${location}</div>
+        <div class="card-brand-name" style="color:${style.color}">${event.brand}</div>
       </div>
       <div class="card-main">
-        <div class="card-brand-name" style="color:${style.color}">${event.brand}</div>
-        <div class="card-location">${location}</div>
         <div class="card-artists">
           ${artistsHtml}
           ${tbaArtistNote}
         </div>
+        <div class="card-location">${location}</div>
       </div>
       <div class="card-action">
         ${actionHtml}
