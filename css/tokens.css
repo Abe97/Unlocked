@@ -1,0 +1,193 @@
+/* ── tokens.css — Design tokens for unlocked.it ────────────────── */
+
+@font-face {
+  font-family: 'DirtyStains';
+  src: url('../asset/font/DirtyStains-DEMO.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ── Superfici */
+  --bg:          #0C0C0A;
+  --bg-warm:     #100F0D;
+  --surface:     #131210;
+  --surface-2:   #1A1916;
+  --surface-3:   #22211E;
+
+  /* ── Off-white caldo */
+  --cream:       #D8D4C8;
+  --cream-80:    rgba(216,212,200,0.80);
+  --cream-50:    rgba(216,212,200,0.50);
+  --cream-28:    rgba(216,212,200,0.28);
+  --cream-10:    rgba(216,212,200,0.10);
+  --cream-06:    rgba(216,212,200,0.06);
+
+  /* ── Bordi */
+  --border:      rgba(216,212,200,0.07);
+  --border-md:   rgba(216,212,200,0.13);
+  --border-lg:   rgba(216,212,200,0.22);
+
+  /* ── Font */
+  --font-display: 'DirtyStains', serif;
+  --font-body:    'Inter', sans-serif;
+
+  /* ── Layout */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+}
+
+/* ── Reset ───────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.65;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+body.touch-device {
+  cursor: auto;
+}
+
+a, button {
+  cursor: none;
+}
+
+body.touch-device a,
+body.touch-device button {
+  cursor: pointer;
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+}
+
+ul { list-style: none; }
+
+/* ── Grain overlay ───────────────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.065;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* ── Typography classes ──────────────────────────────────────────── */
+.t-display {
+  font-family: var(--font-display);
+  font-size: clamp(80px, 12vw, 160px);
+  line-height: 0.88;
+  letter-spacing: 0.01em;
+  color: var(--cream);
+}
+
+.t-display-md {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  color: var(--cream);
+}
+
+.t-display-sm {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 36px);
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: var(--cream);
+}
+
+.t-overline {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--cream-50);
+}
+
+.t-h2 {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--cream-80);
+}
+
+.t-body {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.72;
+  color: var(--cream-80);
+}
+
+.t-small {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--cream-50);
+}
+
+.t-caption {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream-28);
+}
+
+/* ── Layout utilities ────────────────────────────────────────────── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.section-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--cream-28);
+  margin-bottom: 44px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.section-label::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 40px;
+  background: var(--border-md);
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 0 24px;
+  }
+}

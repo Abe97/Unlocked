@@ -1,0 +1,330 @@
+{
+  "meta": {
+    "siteName": "Unlocked",
+    "domain": "unlocked.it",
+    "description": {
+      "it": "Da 15 anni, la musica elettronica internazionale in Sicilia.",
+      "en": "15 years of international electronic music in Sicily."
+    },
+    "contact": {
+      "email": "info@unlocked.it",
+      "pressKit": "/asset/unlocked-press-kit.pdf"
+    },
+    "social": {
+      "instagramAura": "https://instagram.com/aurafestival.it",
+      "instagramUmf": "https://instagram.com/unlockedmusicfestival",
+      "instagramSolo": "https://instagram.com/unlocked"
+    },
+    "formEndpoint": ""
+  },
+
+  "ui": {
+    "it": {
+      "nav": {
+        "cta": "Biglietti",
+        "links": ["AURA", "UMF", "SOLO", "Artisti", "Sponsor", "Contatti"]
+      },
+      "hero": {
+        "tagline": "Da 15 anni, la musica elettronica internazionale in Sicilia.",
+        "nextEventLabel": "Prossimo evento",
+        "ctaPrimary": "Acquista biglietti",
+        "ctaSecondary": "Scopri il programma"
+      },
+      "sections": {
+        "events": "Eventi 2026",
+        "brands": "Tre brand. Un'unica visione.",
+        "history": "15 anni di storia",
+        "historySubtitle": "Dal Parco Archeologico di Selinunte al Porto Nuovo di Castellammare del Golfo, Unlocked porta la musica elettronica internazionale nei luoghi più suggestivi della Sicilia.",
+        "sponsor": "Diventa Partner",
+        "sponsorSubtitle": "Unisciti a noi e porta il tuo brand al cuore della scena elettronica siciliana.",
+        "contact": "Contatti",
+        "contactSubtitle": "Per info eventi, sponsorship o press, scrivici."
+      },
+      "eventCard": {
+        "ticketsLabel": "Biglietti",
+        "soldOutLabel": "Sold Out",
+        "tbaLabel": "TBA",
+        "confirmedArtists": "Artisti confermati"
+      },
+      "countdown": {
+        "days": "giorni",
+        "hours": "ore",
+        "minutes": "min",
+        "seconds": "sec"
+      },
+      "form": {
+        "name": "Nome",
+        "email": "Email",
+        "type": "Tipo di richiesta",
+        "typeOptions": ["Info evento", "Sponsorship", "Press", "Altro"],
+        "message": "Messaggio",
+        "send": "Invia",
+        "namePlaceholder": "Il tuo nome",
+        "emailPlaceholder": "La tua email",
+        "messagePlaceholder": "Scrivi il tuo messaggio..."
+      },
+      "footer": {
+        "organizer": "Organizzato da FACE SRLS / GL CLUB SRLS",
+        "privacy": "Privacy Policy",
+        "cookie": "Cookie Policy"
+      },
+      "sponsorCard": {
+        "requestCta": "Richiedi info"
+      }
+    },
+    "en": {
+      "nav": {
+        "cta": "Tickets",
+        "links": ["AURA", "UMF", "SOLO", "Artists", "Sponsors", "Contact"]
+      },
+      "hero": {
+        "tagline": "15 years of international electronic music in Sicily.",
+        "nextEventLabel": "Next event",
+        "ctaPrimary": "Buy tickets",
+        "ctaSecondary": "See full lineup"
+      },
+      "sections": {
+        "events": "2026 Events",
+        "brands": "Three brands. One vision.",
+        "history": "15 years of history",
+        "historySubtitle": "From the Archaeological Park of Selinunte to Porto Nuovo in Castellammare del Golfo, Unlocked brings international electronic music to Sicily's most evocative places.",
+        "sponsor": "Become a Partner",
+        "sponsorSubtitle": "Join us and bring your brand to the heart of the Sicilian electronic scene.",
+        "contact": "Contact",
+        "contactSubtitle": "For event info, sponsorship or press enquiries, reach out."
+      },
+      "eventCard": {
+        "ticketsLabel": "Tickets",
+        "soldOutLabel": "Sold Out",
+        "tbaLabel": "TBA",
+        "confirmedArtists": "Confirmed artists"
+      },
+      "countdown": {
+        "days": "days",
+        "hours": "hrs",
+        "minutes": "min",
+        "seconds": "sec"
+      },
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "type": "Request type",
+        "typeOptions": ["Event info", "Sponsorship", "Press", "Other"],
+        "message": "Message",
+        "send": "Send",
+        "namePlaceholder": "Your name",
+        "emailPlaceholder": "Your email",
+        "messagePlaceholder": "Write your message..."
+      },
+      "footer": {
+        "organizer": "Organized by FACE SRLS / GL CLUB SRLS",
+        "privacy": "Privacy Policy",
+        "cookie": "Cookie Policy"
+      },
+      "sponsorCard": {
+        "requestCta": "Request info"
+      }
+    }
+  },
+
+  "artists": {
+    "marquee": [
+      "Marco Carola", "Ilario Alicante", "Frank Storm",
+      "Joseph Capriati", "Deborah De Luca", "Sasha",
+      "Reinier Zonneveld", "Tale Of Us", "Nina Kraviz",
+      "Amelie Lens", "Charlotte de Witte"
+    ]
+  },
+
+  "events": [
+    {
+      "id": "aura-segesta-2026",
+      "brand": "AURA",
+      "brandIntensity": "full",
+      "date": {
+        "it": "1 – 2 Maggio 2026",
+        "en": "May 1–2, 2026"
+      },
+      "dateISO": "2026-05-01",
+      "location": {
+        "it": "Parco Archeologico di Segesta",
+        "en": "Archaeological Park of Segesta"
+      },
+      "artists": ["Joseph Capriati"],
+      "artistsTba": true,
+      "ticketUrl": "https://ticketsms.it/placeholder-aura-segesta",
+      "soldOut": false,
+      "tba": false
+    },
+    {
+      "id": "aura-giugno-2026",
+      "brand": "AURA",
+      "brandIntensity": "full",
+      "date": {
+        "it": "1 Giugno 2026",
+        "en": "June 1, 2026"
+      },
+      "dateISO": "2026-06-01",
+      "location": {
+        "it": "Location da annunciare",
+        "en": "Location TBA"
+      },
+      "artists": [],
+      "artistsTba": true,
+      "ticketUrl": "",
+      "soldOut": false,
+      "tba": true
+    },
+    {
+      "id": "umf-castellammare-2026",
+      "brand": "UMF",
+      "brandIntensity": "medium",
+      "date": {
+        "it": "24 – 25 – 26 Luglio 2026",
+        "en": "July 24–25–26, 2026"
+      },
+      "dateISO": "2026-07-24",
+      "location": {
+        "it": "Porto Nuovo, Castellammare del Golfo",
+        "en": "Porto Nuovo, Castellammare del Golfo"
+      },
+      "artists": ["Marco Carola", "Ilario Alicante", "Frank Storm"],
+      "artistsTba": false,
+      "ticketUrl": "https://ticketsms.it/placeholder-umf-2026",
+      "soldOut": false,
+      "tba": false
+    },
+    {
+      "id": "aura-gibellina-2026",
+      "brand": "AURA",
+      "brandIntensity": "full",
+      "date": {
+        "it": "14 Agosto 2026",
+        "en": "August 14, 2026"
+      },
+      "dateISO": "2026-08-14",
+      "location": {
+        "it": "Sistema delle Piazze, Gibellina",
+        "en": "Piazze System, Gibellina"
+      },
+      "artists": ["Joseph Capriati"],
+      "artistsTba": false,
+      "ticketUrl": "https://ticketsms.it/placeholder-aura-gibellina",
+      "soldOut": false,
+      "tba": false
+    },
+    {
+      "id": "aura-alcamo-2026",
+      "brand": "AURA",
+      "brandIntensity": "full",
+      "date": {
+        "it": "21 – 22 Agosto 2026",
+        "en": "August 21–22, 2026"
+      },
+      "dateISO": "2026-08-21",
+      "location": {
+        "it": "Castello di Alcamo",
+        "en": "Castle of Alcamo"
+      },
+      "artists": ["Deborah De Luca"],
+      "artistsTba": true,
+      "ticketUrl": "https://ticketsms.it/placeholder-aura-alcamo",
+      "soldOut": false,
+      "tba": false
+    }
+  ],
+
+  "brands": {
+    "aura": {
+      "name": "AURA",
+      "brandIntensity": "full",
+      "tagline": {
+        "it": "Beyond the sound",
+        "en": "Beyond the sound"
+      },
+      "description": {
+        "it": "Boutique event curatoriale che mette in dialogo musica elettronica contemporanea e patrimonio storico. Ogni edizione è un atto curatoriale in luoghi che non hanno bisogno di essere spiegati.",
+        "en": "A curatorial boutique event that puts contemporary electronic music in dialogue with historic heritage. Each edition is a curatorial act in places that need no introduction."
+      }
+    },
+    "umf": {
+      "name": "Unlocked Music Festival",
+      "acronym": "UMF",
+      "brandIntensity": "medium",
+      "tagline": {
+        "it": "Dal tramonto fino a notte fonda",
+        "en": "From sunset to deep night"
+      },
+      "description": {
+        "it": "Il festival open-air internazionale di Unlocked. Dal Porto Nuovo di Castellammare del Golfo, una produzione strutturata che porta la scena elettronica mondiale in Sicilia.",
+        "en": "Unlocked's international open-air festival. From Porto Nuovo in Castellammare del Golfo, a structured production bringing the global electronic scene to Sicily."
+      }
+    },
+    "solo": {
+      "name": "SOLO",
+      "brandIntensity": "muted",
+      "tagline": {
+        "it": "Monochromatic Nature",
+        "en": "Monochromatic Nature"
+      },
+      "description": {
+        "it": "Un format che mette l'artista al centro, non come performer, ma come presenza. Non come nome in una line-up, ma come visione che attraversa uno spazio. L'artista non è uno dei tanti. È l'unico.",
+        "en": "A format that puts the artist at the center, not as a performer, but as a presence. Not as a name in a lineup, but as a vision that crosses a space. The artist is not one of many. They are the only one."
+      }
+    }
+  },
+
+  "sponsorPackages": [
+    {
+      "id": "official",
+      "name": { "it": "Official Partner", "en": "Official Partner" },
+      "price": "€ 2.500 + IVA",
+      "benefits": {
+        "it": ["Logo su materiali ufficiali", "1 post social dedicato", "10 biglietti hospitality", "Logo su sito e totem ingresso"],
+        "en": ["Logo on official materials", "1 dedicated social post", "10 hospitality tickets", "Logo on website and entrance totems"]
+      }
+    },
+    {
+      "id": "premium",
+      "name": { "it": "Premium Partner", "en": "Premium Partner" },
+      "price": "€ 5.000 + IVA",
+      "benefits": {
+        "it": ["Tutto il pacchetto Official +", "5 post social dedicati", "Spazio espositivo brandizzato", "20 biglietti hospitality"],
+        "en": ["Everything in Official +", "5 dedicated social posts", "Branded exhibition space", "20 hospitality tickets"]
+      }
+    },
+    {
+      "id": "gold",
+      "name": { "it": "Gold Partner", "en": "Gold Partner" },
+      "price": "€ 10.000 + IVA",
+      "benefits": {
+        "it": ["Tutto il pacchetto Premium +", "Produzione contenuti video", "35 biglietti VIP", "Naming area specifica"],
+        "en": ["Everything in Premium +", "Video content production", "35 VIP tickets", "Specific area naming"]
+      }
+    },
+    {
+      "id": "main",
+      "name": { "it": "Main Sponsor", "en": "Main Sponsor" },
+      "price": "€ 15.000 + IVA",
+      "benefits": {
+        "it": ["Tutto il pacchetto Gold +", "Logo in apertura ogni concerto", "Campagna social co-branded", "Accesso backstage", "Esclusività merceologica"],
+        "en": ["Everything in Gold +", "Logo at opening of each concert", "Co-branded social campaign", "Backstage access", "Category exclusivity"]
+      }
+    }
+  ],
+
+  "history": {
+    "stats": {
+      "years": 15,
+      "events": 400,
+      "liveAttendees": 30000,
+      "locations": 4
+    },
+    "milestones": [
+      { "year": 2019, "label": { "it": "Parco Archeologico di Selinunte", "en": "Selinunte Archaeological Park" } },
+      { "year": 2022, "label": { "it": "Parco Archeologico di Selinunte", "en": "Selinunte Archaeological Park" } },
+      { "year": 2023, "label": { "it": "Parco Archeologico di Selinunte", "en": "Selinunte Archaeological Park" } },
+      { "year": 2025, "label": { "it": "Porto Nuovo, Castellammare del Golfo", "en": "Porto Nuovo, Castellammare del Golfo" } }
+    ]
+  }
+}

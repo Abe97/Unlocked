@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unlocked — Musica Elettronica in Sicilia</title>
+  <meta name="description" content="Da 15 anni, la musica elettronica internazionale in Sicilia. AURA · UMF · SOLO">
+  <meta property="og:title" content="Unlocked">
+  <meta property="og:description" content="Da 15 anni, la musica elettronica internazionale in Sicilia.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js" defer></script>
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Geometric side bars -->
+  <div class="geo-left" aria-hidden="true"></div>
+  <div class="geo-right" aria-hidden="true"></div>
+
+  <!-- ── NAV ─────────────────────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Navigazione principale">
+    <a class="nav-logo" href="#hero" aria-label="Unlocked — torna in cima">UNLOCKED</a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#brand">AURA</a></li>
+      <li><a href="#brand">UMF</a></li>
+      <li><a href="#brand">SOLO</a></li>
+      <li><a href="#eventi">Artisti</a></li>
+      <li><a href="#sponsor">Sponsor</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="nav-lang" role="group" aria-label="Lingua">
+        <button class="lang-btn active" data-lang="it" aria-pressed="true">IT</button>
+        <span class="lang-sep" aria-hidden="true"></span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="nav-cta" href="#eventi" aria-label="Acquista biglietti">Biglietti</a>
+    </div>
+
+    <button class="nav-hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="nav-mobile-menu" role="dialog" aria-label="Menu mobile">
+    <a href="#brand">AURA</a>
+    <a href="#brand">UMF</a>
+    <a href="#brand">SOLO</a>
+    <a href="#eventi">Artisti</a>
+    <a href="#sponsor">Sponsor</a>
+    <a href="#contatti">Contatti</a>
+    <div class="nav-mobile-footer">
+      <div class="nav-lang">
+        <button class="lang-btn active" data-lang="it" aria-pressed="true">IT</button>
+        <span class="lang-sep" aria-hidden="true"></span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="nav-cta nav-mobile-cta" href="#eventi">Biglietti</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ── HERO ─────────────────────────────────────────────────── -->
+    <section id="hero" aria-label="Hero">
+
+      <!-- Background video -->
+      <div class="hero-bg" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="none" poster="">
+          <source src="asset/video/unlocked-2025.mp4" type="video/mp4">
+        </video>
+        <div class="hero-bg-overlay"></div>
+      </div>
+
+      <!-- Corner decorations -->
+      <div class="hero-corner tl" aria-hidden="true"></div>
+      <div class="hero-corner tr" aria-hidden="true"></div>
+      <div class="hero-corner bl" aria-hidden="true"></div>
+      <div class="hero-corner br" aria-hidden="true"></div>
+
+      <!-- Section counter -->
+      <div class="hero-counter-label" aria-hidden="true">01 / 06</div>
+
+      <div class="hero-content">
+        <h1 class="hero-title">UNLOCKED</h1>
+        <p class="hero-sub" data-i18n="hero.tagline">
+          Da 15 anni, la musica elettronica internazionale in Sicilia.
+        </p>
+
+        <div class="hero-bottom">
+          <!-- Next event block -->
+          <div class="hero-event-block">
+            <div class="hero-event-meta">
+              <span class="hero-event-label">Prossimo evento</span>
+              <div class="hero-event-date">—</div>
+              <div class="hero-event-location">—</div>
+            </div>
+            <div class="hero-actions">
+              <a class="btn btn-primary btn-sm hero-cta" href="#eventi" aria-label="Acquista biglietti">Acquista biglietti</a>
+              <a class="btn btn-ghost btn-sm hero-cta-secondary" href="#eventi" aria-label="Scopri il programma">Scopri il programma</a>
+            </div>
+          </div>
+
+          <!-- Countdown -->
+          <div class="hero-countdown" aria-live="polite" aria-label="Countdown al prossimo evento">
+            <div class="countdown-unit">
+              <div class="countdown-num" id="cd-days">00</div>
+              <div class="countdown-label cd-label-days">giorni</div>
+            </div>
+            <div class="countdown-unit">
+              <div class="countdown-num" id="cd-hours">00</div>
+              <div class="countdown-label cd-label-hours">ore</div>
+            </div>
+            <div class="countdown-unit">
+              <div class="countdown-num" id="cd-mins">00</div>
+              <div class="countdown-label cd-label-mins">min</div>
+            </div>
+            <div class="countdown-unit">
+              <div class="countdown-num" id="cd-secs">00</div>
+              <div class="countdown-label cd-label-secs">sec</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MARQUEE ───────────────────────────────────────────────── -->
+    <div class="section-marquee" aria-hidden="true">
+      <div class="marquee-wrap">
+        <div class="marquee-track">
+          <!-- Populated by config-loader.js -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ── EVENTI ────────────────────────────────────────────────── -->
+    <section id="eventi" class="section" aria-labelledby="eventi-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-counter" aria-hidden="true">02 / 06</div>
+          <h2 class="section-title" id="eventi-title">Eventi 2026</h2>
+        </div>
+
+        <div class="events-list" role="list" aria-label="Lista eventi 2026">
+          <!-- Populated by config-loader.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BRAND ─────────────────────────────────────────────────── -->
+    <section id="brand" class="section" aria-labelledby="brand-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-counter" aria-hidden="true">03 / 06</div>
+          <h2 class="section-title" id="brand-title">Tre brand. Un'unica visione.</h2>
+        </div>
+
+        <div class="brand-panels" role="list">
+          <!-- Populated by config-loader.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ── STORIA ────────────────────────────────────────────────── -->
+    <section id="storia" class="section" aria-labelledby="storia-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-counter" aria-hidden="true">04 / 06</div>
+          <h2 class="section-title" id="storia-title">15 anni di storia</h2>
+          <p class="section-subtitle">
+            Dal Parco Archeologico di Selinunte al Porto Nuovo di Castellammare del Golfo,
+            Unlocked porta la musica elettronica internazionale nei luoghi più suggestivi della Sicilia.
+          </p>
+        </div>
+
+        <div class="history-inner">
+          <!-- Stats -->
+          <div class="history-stats" role="list" aria-label="Statistiche">
+            <div class="stat-block" id="stat-years" role="listitem">
+              <div class="stat-num" data-target="15">15+</div>
+              <div class="stat-label">anni di storia</div>
+            </div>
+            <div class="stat-block" id="stat-events" role="listitem">
+              <div class="stat-num" data-target="400">400+</div>
+              <div class="stat-label">eventi</div>
+            </div>
+            <div class="stat-block" id="stat-attendees" role="listitem">
+              <div class="stat-num" data-target="30000">30K</div>
+              <div class="stat-label">live ogni anno</div>
+            </div>
+            <div class="stat-block" id="stat-locations" role="listitem">
+              <div class="stat-num" data-target="4">4+</div>
+              <div class="stat-label">location storiche</div>
+            </div>
+          </div>
+
+          <!-- Text + Timeline -->
+          <div class="history-text">
+            <p class="history-body">
+              Dal 2009, Unlocked costruisce un'identità unica nel panorama della musica elettronica italiana.
+              Tre brand, una visione: portare artisti internazionali nei luoghi che definiscono la Sicilia.
+            </p>
+
+            <div class="history-timeline" aria-label="Timeline storica">
+              <div class="timeline-line" aria-hidden="true"></div>
+              <div class="history-timeline-items">
+                <!-- Populated by config-loader.js -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery -->
+        <div class="history-gallery" role="list" aria-label="Gallery fotografica">
+          <div class="gallery-item" role="listitem">
+            <div class="gallery-placeholder" aria-hidden="true"><span>img 01</span></div>
+          </div>
+          <div class="gallery-item" role="listitem">
+            <div class="gallery-placeholder" aria-hidden="true"><span>img 02</span></div>
+          </div>
+          <div class="gallery-item" role="listitem">
+            <div class="gallery-placeholder" aria-hidden="true"><span>img 03</span></div>
+          </div>
+          <div class="gallery-item" role="listitem">
+            <div class="gallery-placeholder" aria-hidden="true"><span>img 04</span></div>
+          </div>
+          <div class="gallery-item" role="listitem">
+            <div class="gallery-placeholder" aria-hidden="true"><span>img 05</span></div>
+          </div>
+          <div class="gallery-item" role="listitem">
+            <div class="gallery-placeholder" aria-hidden="true"><span>img 06</span></div>
+          </div>
+          <div class="gallery-item" role="listitem">
+            <div class="gallery-placeholder" aria-hidden="true"><span>img 07</span></div>
+          </div>
+          <div class="gallery-item" role="listitem">
+            <div class="gallery-placeholder" aria-hidden="true"><span>img 08</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SPONSOR ───────────────────────────────────────────────── -->
+    <section id="sponsor" class="section" aria-labelledby="sponsor-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-counter" aria-hidden="true">05 / 06</div>
+          <h2 class="section-title" id="sponsor-title">Diventa Partner</h2>
+          <p class="section-subtitle">
+            Unisciti a noi e porta il tuo brand al cuore della scena elettronica siciliana.
+          </p>
+        </div>
+
+        <div class="sponsor-grid" role="list" aria-label="Pacchetti sponsor">
+          <!-- Populated by config-loader.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTATTI ──────────────────────────────────────────────── -->
+    <section id="contatti" class="section" aria-labelledby="contatti-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-counter" aria-hidden="true">06 / 06</div>
+          <h2 class="section-title" id="contatti-title">Contatti</h2>
+          <p class="section-subtitle">
+            Per info eventi, sponsorship o press, scrivici.
+          </p>
+        </div>
+
+        <div class="contact-inner">
+          <!-- Form -->
+          <form class="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="contact-name" data-form-label="name">Nome</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  data-form-field="name"
+                  placeholder="Il tuo nome"
+                  autocomplete="name"
+                  required
+                >
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-email" data-form-label="email">Email</label>
+                <input
+                  class="form-input"
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  data-form-field="email"
+                  placeholder="La tua email"
+                  autocomplete="email"
+                  required
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-type" data-form-label="type">Tipo di richiesta</label>
+              <select class="form-select" id="contact-type" name="type" data-form-field="type">
+                <option>Info evento</option>
+                <option>Sponsorship</option>
+                <option>Press</option>
+                <option>Altro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-message" data-form-label="message">Messaggio</label>
+              <textarea
+                class="form-textarea"
+                id="contact-message"
+                name="message"
+                data-form-field="message"
+                placeholder="Scrivi il tuo messaggio..."
+                required
+              ></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit" data-form-send>Invia</button>
+          </form>
+
+          <!-- Info -->
+          <div class="contact-info">
+            <div class="contact-info-block">
+              <div class="contact-info-label">Social</div>
+              <div class="contact-social-links">
+                <a class="contact-social-link social-link-aura" href="#" target="_blank" rel="noopener" aria-label="Instagram AURA">
+                  Instagram AURA
+                </a>
+                <a class="contact-social-link social-link-umf" href="#" target="_blank" rel="noopener" aria-label="Instagram UMF">
+                  Instagram UMF
+                </a>
+                <a class="contact-social-link social-link-solo" href="#" target="_blank" rel="noopener" aria-label="Instagram SOLO">
+                  Instagram SOLO
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-info-block">
+              <div class="contact-info-label">Email</div>
+              <a class="contact-email" href="mailto:info@unlocked.it">info@unlocked.it</a>
+            </div>
+
+            <div class="contact-info-block">
+              <div class="contact-info-label">Press</div>
+              <a class="contact-press-kit" href="/asset/unlocked-press-kit.pdf" download aria-label="Download Press Kit PDF">
+                <span>Download Press Kit</span>
+                <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ───────────────────────────────────────────────────── -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <a class="footer-logo" href="#hero" aria-label="Unlocked — torna in cima">UNLOCKED</a>
+
+      <nav class="footer-links" aria-label="Link footer">
+        <a href="#eventi">Events</a>
+        <a href="#brand">Brand</a>
+        <a href="#storia">History</a>
+        <a href="#sponsor">Sponsor</a>
+        <a href="#contatti">Contact</a>
+      </nav>
+
+      <div class="footer-lang nav-lang">
+        <button class="lang-btn active" data-lang="it" aria-pressed="true">IT</button>
+        <span class="lang-sep" aria-hidden="true"></span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        <span class="footer-organizer">Organizzato da FACE SRLS / GL CLUB SRLS</span>
+        &nbsp;·&nbsp;
+        © <span class="footer-year">2026</span> Unlocked
+      </p>
+      <div class="footer-legal">
+        <a class="footer-privacy" href="#">Privacy Policy</a>
+        <a class="footer-cookie" href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── MOBILE STICKY BAR ─────────────────────────────────────────── -->
+  <div class="mobile-sticky-bar" role="complementary" aria-label="Prossimo evento">
+    <span class="sticky-bar-info">—</span>
+    <a class="sticky-bar-cta" href="#eventi" aria-label="Acquista biglietti">Biglietti →</a>
+  </div>
+
+  <!-- JS — load order matters -->
+  <script src="js/config-loader.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
