@@ -470,7 +470,7 @@ function initImageInterludes() {
 
     // Clip-path: expand from 6% side margins to full width on scroll
     gsap.fromTo(el,
-      { clipPath: 'inset(0 6% 0 6%)' },
+      { clipPath: 'inset(0 22% 0 22%)' },
       {
         clipPath: 'inset(0 0% 0 0%)',
         ease: 'none',
