@@ -10,6 +10,16 @@ const intensityMap = {
   muted:  { color: 'var(--cream-50)', dot: 'var(--cream-28)' }
 }
 
+const brandLogoMap = {
+  'AURA': 'asset/img/Aura_Logo_logo%20completo%20%2B%20claim%20bianco.svg',
+  'UMF':  'asset/img/UMF%20BIANCO.png',
+  'SOLO': 'asset/img/solo-logo.svg'
+}
+
+function getBrandLogo(brand) {
+  return brandLogoMap[brand] || null
+}
+
 function getBrandStyle(brandIntensity) {
   return intensityMap[brandIntensity] || intensityMap.medium
 }
@@ -172,7 +182,10 @@ function populateEvents(config, lang) {
     <article class="event-card ${brandClass} ${tbaClass}" data-event-id="${event.id}">
       <div class="card-date-col">
         <div class="card-date-day" style="color:${style.color}">${date}</div>
-        <div class="card-brand-name" style="color:${style.color}">${event.brand}</div>
+        ${getBrandLogo(event.brand)
+          ? `<img class="card-brand-logo" src="${getBrandLogo(event.brand)}" alt="${event.brand}" loading="lazy">`
+          : `<div class="card-brand-name" style="color:${style.color}">${event.brand}</div>`
+        }
       </div>
       <div class="card-main">
         <div class="card-artists">
@@ -206,9 +219,13 @@ function populateBrands(config, lang) {
   panelsEl.innerHTML = brands.map(({ key, data }) => {
     const style = getBrandStyle(data.brandIntensity)
     const discoverText = lang === 'it' ? 'Scopri →' : 'Discover →'
+    const logo = getBrandLogo(data.name || data.acronym || key.toUpperCase())
     return `
     <div class="brand-panel" data-brand="${key}">
-      <div class="brand-panel-name" style="color:${style.color}">${data.name}</div>
+      ${logo
+        ? `<img class="brand-panel-logo" src="${logo}" alt="${data.name}" loading="lazy">`
+        : `<div class="brand-panel-name" style="color:${style.color}">${data.name}</div>`
+      }
       <div class="brand-panel-tagline">${data.tagline[lang]}</div>
       <p class="brand-panel-desc">${data.description[lang]}</p>
       <div class="brand-panel-divider"></div>
