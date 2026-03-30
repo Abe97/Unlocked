@@ -107,6 +107,18 @@
     })
   }
 
+  // ── Hero audio toggle ─────────────────────────────────────────────
+  const audioBtn = document.querySelector('.hero-audio-btn')
+  const heroVideo = document.querySelector('.hero-bg video')
+  if (audioBtn && heroVideo) {
+    audioBtn.addEventListener('click', () => {
+      heroVideo.muted = !heroVideo.muted
+      audioBtn.classList.toggle('active', !heroVideo.muted)
+      audioBtn.setAttribute('aria-pressed', String(!heroVideo.muted))
+      audioBtn.setAttribute('aria-label', heroVideo.muted ? 'Attiva audio' : 'Disattiva audio')
+    })
+  }
+
   // ── Re-animate cursor on new dynamic elements ─────────────────────
   // Delegate hover events to document for dynamically added elements
   document.addEventListener('mouseenter', (e) => {

@@ -574,6 +574,48 @@
   }
 }
 
+/* ── Hero audio button ───────────────────────────────────────────── */
+.hero-audio-btn {
+  position: absolute;
+  bottom: 28px;
+  right: 52px;
+  z-index: 10;
+  background: rgba(12,12,10,0.5);
+  border: 1px solid var(--border-md);
+  color: var(--cream-50);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hero-audio-btn:hover {
+  color: var(--cream);
+  border-color: var(--border-lg);
+  background: rgba(12,12,10,0.7);
+}
+
+.hero-audio-btn .icon-unmuted { display: none; }
+.hero-audio-btn.active .icon-muted   { display: none; }
+.hero-audio-btn.active .icon-unmuted { display: block; }
+.hero-audio-btn.active {
+  color: var(--cream);
+  border-color: var(--border-lg);
+}
+
+@media (max-width: 767px) {
+  .hero-audio-btn {
+    bottom: 72px;
+    right: 24px;
+  }
+}
+
 /* ── Hero corners ────────────────────────────────────────────────── */
 .hero-corner {
   position: absolute;
