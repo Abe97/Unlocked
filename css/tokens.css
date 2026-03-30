@@ -30,7 +30,7 @@
   --border-lg:   rgba(216,212,200,0.22);
 
   /* ── Font */
-  --font-display: 'HandveticaNeue', sans-serif;
+  --font-display: 'Inter', sans-serif;
   --font-body:    'Inter', sans-serif;
 
   /* ── Layout */
@@ -97,24 +97,27 @@ body::before {
 .t-display {
   font-family: var(--font-display);
   font-size: clamp(80px, 12vw, 160px);
+  font-weight: 800;
   line-height: 0.88;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.03em;
   color: var(--cream);
 }
 
 .t-display-md {
   font-family: var(--font-display);
   font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
   line-height: 0.92;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.02em;
   color: var(--cream);
 }
 
 .t-display-sm {
   font-family: var(--font-display);
   font-size: clamp(22px, 3vw, 36px);
+  font-weight: 700;
   line-height: 1;
-  letter-spacing: 0.03em;
+  letter-spacing: -0.01em;
   color: var(--cream);
 }
 
