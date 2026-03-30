@@ -145,14 +145,14 @@
 .hero-brand-logo {
   display: block;
   width: auto;
-  max-width: 100px;
+  max-width: 160px;
   height: auto;
-  max-height: 28px;
+  max-height: 48px;
   object-fit: contain;
   object-position: left center;
-  opacity: 0.6;
+  opacity: 0.85;
   filter: brightness(0) invert(1);
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .hero-event-label {
