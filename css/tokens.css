@@ -1,8 +1,8 @@
 /* ── tokens.css — Design tokens for unlocked.it ────────────────── */
 
 @font-face {
-  font-family: 'DirtyStains';
-  src: url('../asset/font/DirtyStains-DEMO.otf') format('opentype');
+  font-family: 'HandveticaNeue';
+  src: url('../asset/font/Handvetica-Neue-TRIAL.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -30,7 +30,7 @@
   --border-lg:   rgba(216,212,200,0.22);
 
   /* ── Font */
-  --font-display: 'DirtyStains', serif;
+  --font-display: 'HandveticaNeue', sans-serif;
   --font-body:    'Inter', sans-serif;
 
   /* ── Layout */

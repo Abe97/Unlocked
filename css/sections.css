@@ -1,5 +1,15 @@
 /* ── sections.css — Layout and style for each page section ─────── */
 
+/* ── Numbers always use Inter ────────────────────────────────────── */
+.countdown-num,
+.stat-num,
+.card-date-day,
+.timeline-year,
+.sponsor-price,
+.footer-year {
+  font-family: var(--font-body);
+}
+
 /* ── General section spacing ─────────────────────────────────────── */
 .section {
   padding: 96px 0;
