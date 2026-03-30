@@ -107,30 +107,6 @@
     })
   }
 
-  // ── Orbs parallax (rAF) ──────────────────────────────────────────
-  ;(function initOrbsParallax() {
-    const orbA = document.querySelector('.orb-a')
-    const orbB = document.querySelector('.orb-b')
-    if (!orbA || !orbB) return
-
-    let scrollY = 0
-    let ticking = false
-
-    function updateOrbs() {
-      orbA.style.setProperty('--orb-y', `${-scrollY * 0.30}px`)
-      orbB.style.setProperty('--orb-y', `${-scrollY * 0.15}px`)
-      ticking = false
-    }
-
-    window.addEventListener('scroll', () => {
-      scrollY = window.scrollY
-      if (!ticking) {
-        requestAnimationFrame(updateOrbs)
-        ticking = true
-      }
-    }, { passive: true })
-  })()
-
   // ── Re-animate cursor on new dynamic elements ─────────────────────
   // Delegate hover events to document for dynamically added elements
   document.addEventListener('mouseenter', (e) => {
