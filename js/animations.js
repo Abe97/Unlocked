@@ -19,6 +19,7 @@ function initAnimations(config) {
   initNavAnimation()
   initHeroAnimation()
   initMarquee()
+  initOrbs()
   initEventsAnimation()
   initBrandsAnimation()
   initHistoryAnimation()
@@ -127,7 +128,7 @@ function initMarquee() {
     const leftUnit  = (leftList.length  / 3) * itemHeight
     const rightUnit = (rightList.length / 3) * itemHeight
 
-    const speed = { left: 0.4, right: 0.4 }
+    const speed = { left: 1.5, right: 1.5 }
     let yLeft  = 0
     let yRight = -rightUnit  // start offset so cols are staggered
 
@@ -145,10 +146,10 @@ function initMarquee() {
     // Slow down on section hover
     if (section) {
       section.addEventListener('mouseenter', () => {
-        gsap.to(speed, { left: 0.08, right: 0.08, duration: 0.6, ease: 'power2.out' })
+        gsap.to(speed, { left: 0.3, right: 0.3, duration: 0.6, ease: 'power2.out' })
       })
       section.addEventListener('mouseleave', () => {
-        gsap.to(speed, { left: 0.4, right: 0.4, duration: 0.5, ease: 'power2.inOut' })
+        gsap.to(speed, { left: 1.5, right: 1.5, duration: 0.5, ease: 'power2.inOut' })
       })
     }
   })
@@ -459,6 +460,39 @@ function initCursor() {
     el.addEventListener('mouseleave', () => {
       gsap.to(cursor, { scale: 1, duration: 0.3, ease: 'power2.out' })
     })
+  })
+}
+
+// ── Background orbs parallax ─────────────────────────────────────────
+function initOrbs() {
+  const orbA = document.querySelector('.orb-a')
+  const orbB = document.querySelector('.orb-b')
+  if (!orbA || !orbB) return
+
+  const totalScroll = document.body.scrollHeight - window.innerHeight
+
+  gsap.to(orbA, {
+    scrollTrigger: {
+      trigger: document.body,
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: 1.5
+    },
+    y: totalScroll * 0.35,
+    x: totalScroll * 0.08,
+    ease: 'none'
+  })
+
+  gsap.to(orbB, {
+    scrollTrigger: {
+      trigger: document.body,
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: 2
+    },
+    y: totalScroll * -0.2,
+    x: totalScroll * -0.06,
+    ease: 'none'
   })
 }
 
