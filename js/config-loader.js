@@ -133,6 +133,12 @@ function startCountdown(dateISO, labels) {
   setInterval(tick, 1000)
 }
 
+// ── Artists intro label ───────────────────────────────────────────────
+function populateArtistsIntro(config, lang) {
+  const el = document.querySelector('.artists-intro-text')
+  if (el) el.textContent = config.ui[lang].sections.artistsIntro
+}
+
 // ── Artists vertical scroll ───────────────────────────────────────────
 function populateMarquee(config) {
   const trackLeft  = document.getElementById('artists-track-left')
@@ -421,6 +427,7 @@ function populateStickyBar(config, lang) {
 function populateDOM(config, lang) {
   populateNav(config, lang)
   populateHero(config, lang)
+  populateArtistsIntro(config, lang)
   populateMarquee(config)
   populateEvents(config, lang)
   populateBrands(config, lang)
@@ -435,6 +442,7 @@ function populateDOM(config, lang) {
 function updateTextContent(config, lang) {
   populateNav(config, lang)
   populateHero(config, lang)
+  populateArtistsIntro(config, lang)
   populateEvents(config, lang)
   populateBrands(config, lang)
   populateHistory(config, lang)
