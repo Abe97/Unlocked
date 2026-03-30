@@ -19,7 +19,6 @@ function initAnimations(config) {
   initNavAnimation()
   initHeroAnimation()
   initMarquee()
-  initOrbs()
   initEventsAnimation()
   initBrandsAnimation()
   initHistoryAnimation()
@@ -460,39 +459,6 @@ function initCursor() {
     el.addEventListener('mouseleave', () => {
       gsap.to(cursor, { scale: 1, duration: 0.3, ease: 'power2.out' })
     })
-  })
-}
-
-// ── Background orbs parallax ─────────────────────────────────────────
-function initOrbs() {
-  const orbA = document.querySelector('.orb-a')
-  const orbB = document.querySelector('.orb-b')
-  if (!orbA || !orbB) return
-
-  const totalScroll = document.body.scrollHeight - window.innerHeight
-
-  gsap.to(orbA, {
-    scrollTrigger: {
-      trigger: document.body,
-      start: 'top top',
-      end: 'bottom bottom',
-      scrub: 1.5
-    },
-    y: totalScroll * 0.35,
-    x: totalScroll * 0.08,
-    ease: 'none'
-  })
-
-  gsap.to(orbB, {
-    scrollTrigger: {
-      trigger: document.body,
-      start: 'top top',
-      end: 'bottom bottom',
-      scrub: 2
-    },
-    y: totalScroll * -0.2,
-    x: totalScroll * -0.06,
-    ease: 'none'
   })
 }
 
