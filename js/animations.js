@@ -296,71 +296,27 @@ function initHistoryAnimation() {
 
   setTimeout(initCounters, 150)
 
-  // Horizontal scroll timeline
+  // Vertical timeline — normal ScrollTrigger, no pin
   function initTimeline() {
-    const track = document.querySelector('.storia-track')
-    if (!track) return
-
-    const getScrollDist = () => Math.max(0, track.scrollWidth - window.innerWidth)
-
-    const tween = gsap.to(track, {
-      x: () => -getScrollDist(),
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '#storia',
-        pin: true,
-        start: 'top top',
-        end: () => '+=' + getScrollDist(),
-        scrub: 1,
-        anticipatePin: 1,
-        invalidateOnRefresh: true
-      }
-    })
-
-    // Animate events and ticks as they scroll into view
-    gsap.utils.toArray('.storia-event, .storia-tick').forEach(el => {
-      const isTick = el.classList.contains('storia-tick')
-      const isAbove = el.classList.contains('above')
-
-      if (isTick) {
-        // Ticks: simple fade in
-        gsap.fromTo(el,
-          { opacity: 0 },
-          {
-            opacity: 1,
-            duration: 0.4,
-            ease: 'power2.out',
-            scrollTrigger: {
-              containerAnimation: tween,
-              trigger: el,
-              start: 'left 90%',
-              toggleActions: 'play none none none'
-            }
-          }
-        )
-        return
-      }
-
-      // Events: dot grows from the line, then text fades in
+    gsap.utils.toArray('.storia-event').forEach(el => {
+      const isLeft  = el.classList.contains('left')
       const dot     = el.querySelector('.storia-event-dot')
       const content = el.querySelector('.storia-event-content')
 
-      // Set initial child states (parent stays opacity:0 via CSS)
       gsap.set(dot,     { scale: 0, transformOrigin: 'center center' })
-      gsap.set(content, { opacity: 0, y: isAbove ? 16 : -16 })
+      gsap.set(content, { opacity: 0, x: isLeft ? -48 : 48 })
 
       const tl = gsap.timeline({
         scrollTrigger: {
-          containerAnimation: tween,
           trigger: el,
-          start: 'left 92%',
+          start: 'top 88%',
           toggleActions: 'play none none none'
         }
       })
 
       tl.set(el, { opacity: 1 })
-        .to(dot, { scale: 1, duration: 0.35, ease: 'back.out(2.5)' })
-        .to(content, { opacity: 1, y: 0, duration: 0.55, ease: 'power3.out' }, '-=0.1')
+        .to(dot,     { scale: 1, duration: 0.4,  ease: 'back.out(2.5)' })
+        .to(content, { opacity: 1, x: 0, duration: 0.65, ease: 'power3.out' }, '-=0.15')
     })
   }
 

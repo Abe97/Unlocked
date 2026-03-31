@@ -288,27 +288,6 @@ function populateHistory(config, lang) {
     if (lblEl) lblEl.textContent = label
   })
 
-  // Horizontal timeline — responsive step size
-  const START = 2012, END = 2026
-  const STEP = window.innerWidth < 768 ? 90 : 140
-  const PAD  = 120
-
-  const track = document.querySelector('.storia-track')
-  if (track) track.style.width = (PAD + (END - START) * STEP + PAD) + 'px'
-
-  // Year ticks (every 2 years)
-  const ticksEl = document.querySelector('.storia-year-ticks')
-  if (ticksEl) {
-    let html = ''
-    for (let y = START; y <= END; y += 2) {
-      const x = PAD + (y - START) * STEP
-      html += `<div class="storia-tick" style="left:${x}px">
-        <div class="storia-tick-mark"></div>
-      </div>`
-    }
-    ticksEl.innerHTML = html
-  }
-
   // Expand yearEnd entries into one node per year
   const milestones = []
   for (const m of h.milestones) {
@@ -321,21 +300,18 @@ function populateHistory(config, lang) {
     }
   }
 
-  // Event nodes — alternate above/below, repeats smaller
+  // Vertical timeline — alternate left/right
   const milestonesEl = document.querySelector('.storia-milestones')
   if (milestonesEl) {
-    let altIndex = 0
-    milestonesEl.innerHTML = milestones.map(m => {
-      const x = PAD + (m.year - START) * STEP
-      const aboveClass = altIndex % 2 === 1 ? 'above' : ''
+    milestonesEl.innerHTML = milestones.map((m, i) => {
+      const sideClass  = i % 2 === 0 ? 'left' : 'right'
       const repeatClass = m.isRepeat ? 'is-repeat' : ''
-      altIndex++
-      return `<div class="storia-event ${aboveClass} ${repeatClass}" style="left:${x}px" role="listitem">
-        <div class="storia-event-dot"></div>
+      return `<div class="storia-event ${sideClass} ${repeatClass}" role="listitem">
         <div class="storia-event-content">
           <div class="storia-event-year">${m.year}</div>
           <div class="storia-event-label">${m.label[lang]}</div>
         </div>
+        <div class="storia-event-dot-wrap"><div class="storia-event-dot"></div></div>
       </div>`
     }).join('')
   }

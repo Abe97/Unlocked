@@ -575,17 +575,12 @@
 
 /* ── History section ─────────────────────────────────────────────── */
 #storia {
-  padding: 0;
-  height: 100vh;
+  padding: 0 0 120px;
   background: var(--bg);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
 }
 
 .storia-top {
-  flex-shrink: 0;
-  padding: 64px 0 48px;
+  padding: 80px 0 96px;
 }
 
 .storia-header-row {
@@ -635,84 +630,69 @@
   letter-spacing: 0.04em;
 }
 
-/* Horizontal timeline */
-.storia-track-wrap {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  padding-bottom: 56px;
-}
-
-.storia-track {
+/* ── Vertical timeline ────────────────────────────────────────────── */
+.storia-v-wrap {
   position: relative;
-  height: 480px;
-  flex-shrink: 0;
-  /* width set by JS */
+  padding: 20px 0 40px;
 }
 
-.storia-h-line {
+.storia-v-line {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 240px;
-  height: 1px;
-  background: var(--border-md);
-}
-
-/* Year ticks */
-.storia-year-ticks {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.storia-tick {
-  position: absolute;
-  top: 240px;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  opacity: 0;
-}
-
-.storia-tick-mark {
+  left: 50%;
+  top: 0;
+  bottom: 0;
   width: 1px;
-  height: 12px;
-  background: var(--cream-28);
+  background: var(--border-md);
+  transform: translateX(-50%);
 }
 
-.storia-tick-year {
-  font-size: 11px;
-  color: var(--cream-28);
-  letter-spacing: 0.05em;
-  margin-top: 8px;
-  white-space: nowrap;
-}
-
-/* Event nodes */
 .storia-milestones {
-  position: absolute;
-  inset: 0;
+  position: relative;
 }
 
 .storia-event {
-  position: absolute;
-  top: 236px;          /* dot top edge → center at 240px (line) */
-  transform: translateX(-50%);
+  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
+  align-items: flex-start;
+  margin-bottom: 88px;
   opacity: 0;
-  cursor: default;
 }
 
-.storia-event.above {
-  top: auto;
-  bottom: 236px;
-  flex-direction: column-reverse;
+.storia-event.is-repeat {
+  margin-bottom: 56px;
+}
+
+/* Left events: content on the left half */
+.storia-event.left {
+  justify-content: flex-start;
+}
+
+.storia-event.left .storia-event-content {
+  width: calc(50% - 44px);
+  text-align: right;
+}
+
+/* Right events: content on the right half */
+.storia-event.right {
+  justify-content: flex-end;
+}
+
+.storia-event.right .storia-event-content {
+  width: calc(50% - 44px);
+  text-align: left;
+}
+
+/* Dot: always centered on the vertical line */
+.storia-event-dot-wrap {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  padding-top: 10px;
 }
 
 .storia-event-dot {
@@ -720,8 +700,7 @@
   height: 10px;
   border-radius: 50%;
   background: var(--cream-50);
-  flex-shrink: 0;
-  transition: background 0.25s, transform 0.25s;
+  transition: background 0.25s;
 }
 
 .storia-event.is-repeat .storia-event-dot {
@@ -732,38 +711,31 @@
 
 .storia-event:hover .storia-event-dot {
   background: var(--cream);
-  transform: scale(1.5);
-}
-
-.storia-event-content {
-  text-align: center;
 }
 
 .storia-event-year {
   font-family: var(--font-display);
-  font-size: 40px;
+  font-size: 56px;
   font-weight: 700;
   color: var(--cream-80);
   letter-spacing: -0.03em;
   line-height: 1;
-  margin-bottom: 8px;
-  white-space: nowrap;
+  margin-bottom: 10px;
 }
 
 .storia-event.is-repeat .storia-event-year {
-  font-size: 28px;
+  font-size: 36px;
   color: var(--cream-50);
 }
 
 .storia-event-label {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--cream-50);
-  line-height: 1.4;
-  white-space: nowrap;
+  line-height: 1.5;
 }
 
 .storia-event.is-repeat .storia-event-label {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--cream-28);
 }
 
@@ -776,11 +748,19 @@
   .history-stats {
     width: 100%;
   }
+
+  .storia-event-year {
+    font-size: 44px;
+  }
+
+  .storia-event.is-repeat .storia-event-year {
+    font-size: 28px;
+  }
 }
 
 @media (max-width: 767px) {
   .storia-top {
-    padding: 48px 0 32px;
+    padding: 48px 0 64px;
   }
 
   .history-stats {
@@ -789,6 +769,44 @@
 
   .stat-block {
     flex: 1 1 calc(50% - 1px);
+  }
+
+  /* On mobile: line on left, all content to the right */
+  .storia-v-line {
+    left: 20px;
+    transform: none;
+  }
+
+  .storia-event.left,
+  .storia-event.right {
+    justify-content: flex-end;
+  }
+
+  .storia-event.left .storia-event-content,
+  .storia-event.right .storia-event-content {
+    width: calc(100% - 56px);
+    text-align: left;
+  }
+
+  .storia-event-dot-wrap {
+    left: 20px;
+    transform: none;
+  }
+
+  .storia-event-year {
+    font-size: 36px;
+  }
+
+  .storia-event.is-repeat .storia-event-year {
+    font-size: 24px;
+  }
+
+  .storia-event {
+    margin-bottom: 56px;
+  }
+
+  .storia-event.is-repeat {
+    margin-bottom: 40px;
   }
 }
 
