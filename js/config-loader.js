@@ -288,8 +288,10 @@ function populateHistory(config, lang) {
     if (lblEl) lblEl.textContent = label
   })
 
-  // Horizontal timeline
-  const START = 2012, END = 2026, STEP = 200, PAD = 200
+  // Horizontal timeline — responsive step size
+  const START = 2012, END = 2026
+  const STEP = window.innerWidth < 768 ? 90 : 140
+  const PAD  = 120
 
   const track = document.querySelector('.storia-track')
   if (track) track.style.width = (PAD + (END - START) * STEP + PAD) + 'px'
@@ -308,18 +310,32 @@ function populateHistory(config, lang) {
     ticksEl.innerHTML = html
   }
 
-  // Event nodes
+  // Expand yearEnd entries into one node per year
+  const milestones = []
+  for (const m of h.milestones) {
+    if (m.yearEnd) {
+      for (let y = m.year; y <= m.yearEnd; y++) {
+        milestones.push({ ...m, year: y, yearEnd: undefined, isRepeat: y > m.year })
+      }
+    } else {
+      milestones.push({ ...m, isRepeat: false })
+    }
+  }
+
+  // Event nodes — alternate above/below, repeats smaller
   const milestonesEl = document.querySelector('.storia-milestones')
   if (milestonesEl) {
-    milestonesEl.innerHTML = h.milestones.map((m, i) => {
+    let altIndex = 0
+    milestonesEl.innerHTML = milestones.map(m => {
       const x = PAD + (m.year - START) * STEP
-      const yearLabel = m.yearEnd ? `${m.year} – ${m.yearEnd}` : String(m.year)
-      const aboveClass = i % 2 === 1 ? 'above' : ''
-      return `<div class="storia-event ${aboveClass}" style="left:${x}px" role="listitem">
+      const aboveClass = altIndex % 2 === 1 ? 'above' : ''
+      const repeatClass = m.isRepeat ? 'is-repeat' : ''
+      altIndex++
+      return `<div class="storia-event ${aboveClass} ${repeatClass}" style="left:${x}px" role="listitem">
         <div class="storia-event-dot"></div>
         <div class="storia-event-content">
-          <div class="storia-event-year">${yearLabel}</div>
-          <div class="storia-event-label">${m.label[lang]}</div>
+          <div class="storia-event-year">${m.year}</div>
+          ${!m.isRepeat ? `<div class="storia-event-label">${m.label[lang]}</div>` : ''}
         </div>
       </div>`
     }).join('')

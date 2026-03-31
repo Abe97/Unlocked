@@ -646,7 +646,7 @@
 
 .storia-track {
   position: relative;
-  height: 200px;
+  height: 260px;
   flex-shrink: 0;
   /* width set by JS */
 }
@@ -655,7 +655,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 100px;
+  top: 130px;
   height: 1px;
   background: var(--border-md);
 }
@@ -669,7 +669,7 @@
 
 .storia-tick {
   position: absolute;
-  top: 100px;
+  top: 130px;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
@@ -679,15 +679,15 @@
 
 .storia-tick-mark {
   width: 1px;
-  height: 8px;
-  background: var(--cream-10);
+  height: 10px;
+  background: var(--cream-28);
 }
 
 .storia-tick-year {
-  font-size: 9px;
-  color: var(--cream-28);
+  font-size: 11px;
+  color: var(--cream-50);
   letter-spacing: 0.05em;
-  margin-top: 6px;
+  margin-top: 8px;
   white-space: nowrap;
 }
 
@@ -699,19 +699,19 @@
 
 .storia-event {
   position: absolute;
-  top: 96px;           /* dot top edge at 96px → centered at 100px (line) */
+  top: 126px;          /* dot top edge → center at 130px (line) */
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   opacity: 0;
   cursor: default;
 }
 
 .storia-event.above {
   top: auto;
-  bottom: 96px;        /* dot bottom edge at 96px → centered at 100px from bottom = line */
+  bottom: 126px;
   flex-direction: column-reverse;
 }
 
@@ -721,7 +721,13 @@
   border-radius: 50%;
   background: var(--cream-50);
   flex-shrink: 0;
-  transition: background 0.2s, transform 0.2s;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.storia-event.is-repeat .storia-event-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--cream-28);
 }
 
 .storia-event:hover .storia-event-dot {
@@ -735,19 +741,29 @@
 
 .storia-event-year {
   font-family: var(--font-display);
-  font-size: 13px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--cream-80);
-  letter-spacing: -0.01em;
-  margin-bottom: 3px;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
   white-space: nowrap;
 }
 
+.storia-event.is-repeat .storia-event-year {
+  font-size: 14px;
+  color: var(--cream-50);
+}
+
 .storia-event-label {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--cream-50);
   line-height: 1.4;
   white-space: nowrap;
+}
+
+.storia-event.is-repeat .storia-event-label {
+  font-size: 10px;
+  color: var(--cream-28);
 }
 
 @media (max-width: 1023px) {

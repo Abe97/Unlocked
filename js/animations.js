@@ -321,15 +321,16 @@ function initHistoryAnimation() {
     gsap.utils.toArray('.storia-event, .storia-tick').forEach(el => {
       const isAbove = el.classList.contains('above')
       gsap.fromTo(el,
-        { opacity: 0, y: isAbove ? -12 : 12 },
+        { opacity: 0, y: isAbove ? -28 : 28 },
         {
           opacity: 1,
           y: 0,
-          ease: 'power2.out',
+          duration: 0.6,
+          ease: 'power3.out',
           scrollTrigger: {
             containerAnimation: tween,
             trigger: el,
-            start: 'left 85%',
+            start: 'left 90%',
             toggleActions: 'play none none reverse'
           }
         }
