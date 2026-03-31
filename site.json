@@ -22,7 +22,7 @@
     "it": {
       "nav": {
         "cta": "Biglietti",
-        "links": ["AURA", "UMF", "SOLO", "Artisti", "Sponsor", "Contatti"]
+        "links": ["AURA", "UMF", "SOLO", "Eventi", "Sponsor", "Contatti"]
       },
       "hero": {
         "tagline": "Da 15 anni, la musica elettronica internazionale in Sicilia.",
@@ -77,7 +77,7 @@
     "en": {
       "nav": {
         "cta": "Tickets",
-        "links": ["AURA", "UMF", "SOLO", "Artists", "Sponsors", "Contact"]
+        "links": ["AURA", "UMF", "SOLO", "Events", "Sponsors", "Contact"]
       },
       "hero": {
         "tagline": "15 years of international electronic music in Sicily.",
