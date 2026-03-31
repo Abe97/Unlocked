@@ -577,6 +577,7 @@
 #storia {
   padding: 0 0 120px;
   background: var(--bg);
+  overflow-x: hidden;
 }
 
 .storia-top {

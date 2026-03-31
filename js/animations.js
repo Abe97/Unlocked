@@ -547,15 +547,17 @@ function initImageSlider() {
     const outInner = outSlide.querySelector('.img-slide-inner')
     const inInner  = inSlide.querySelector('.img-slide-inner')
 
-    gsap.set(outInner, { x: 0 }) // clear any drag offset
-    gsap.set(inSlide, { zIndex: 2 })
+    // Ensure incoming is fully visible and reset any drag offset
+    gsap.set(outInner, { x: 0 })
+    gsap.set(inSlide,  { opacity: 1, zIndex: 2 })
     gsap.set(outSlide, { zIndex: 1 })
-    gsap.set(inInner, { xPercent: dir * 105, skewX: dir * -14 })
+    gsap.set(inInner,  { xPercent: dir * 105, skewX: dir * -14, x: 0 })
 
     const tl = gsap.timeline({
       onComplete: () => {
-        gsap.set(outSlide, { zIndex: 0 })
-        gsap.set(outInner, { xPercent: dir * -105, skewX: 0 })
+        // Restore outgoing slide so it can be used as incoming in future
+        gsap.set(outSlide, { opacity: 1, zIndex: 0 })
+        gsap.set(outInner, { xPercent: 105, skewX: 0, x: 0 })
         current = next
         animating = false
         updateUI(current)
@@ -593,17 +595,16 @@ function initImageSlider() {
     dragStartX = e.clientX
     dragDeltaX = 0
     isDragging = true
-    sliderEl.setPointerCapture(e.pointerId)
   })
 
-  sliderEl.addEventListener('pointermove', e => {
+  document.addEventListener('pointermove', e => {
     if (!isDragging) return
     dragDeltaX = e.clientX - dragStartX
     const curInner = slides[current].querySelector('.img-slide-inner')
     gsap.set(curInner, { x: dragDeltaX * 0.3 })
   })
 
-  function endDrag() {
+  document.addEventListener('pointerup', () => {
     if (!isDragging) return
     isDragging = false
     const curInner = slides[current].querySelector('.img-slide-inner')
@@ -614,10 +615,7 @@ function initImageSlider() {
     } else {
       gsap.to(curInner, { x: 0, duration: 0.35, ease: 'power2.out' })
     }
-  }
-
-  sliderEl.addEventListener('pointerup', endDrag)
-  sliderEl.addEventListener('pointercancel', endDrag)
+  })
 
   updateUI(0)
 }
