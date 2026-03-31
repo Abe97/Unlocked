@@ -494,6 +494,21 @@ function initImageSlider() {
   let current  = 0
   let animating = false
 
+  // Clip-path reveal — same as img-interlude
+  gsap.fromTo(section,
+    { clipPath: 'inset(0 22% 0 22%)' },
+    {
+      clipPath: 'inset(0 0% 0 0%)',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 85%',
+        end: 'top 15%',
+        scrub: 0.8
+      }
+    }
+  )
+
   // Build dots
   slides.forEach((_, i) => {
     const dot = document.createElement('button')
