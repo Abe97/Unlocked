@@ -304,7 +304,6 @@ function populateHistory(config, lang) {
       const x = PAD + (y - START) * STEP
       html += `<div class="storia-tick" style="left:${x}px">
         <div class="storia-tick-mark"></div>
-        <div class="storia-tick-year">${y}</div>
       </div>`
     }
     ticksEl.innerHTML = html
