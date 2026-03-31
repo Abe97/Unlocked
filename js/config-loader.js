@@ -89,7 +89,14 @@ function populateHero(config, lang) {
 
   // CTA secondary
   const ctaSecondary = eventBlock.querySelector('.hero-cta-secondary')
-  if (ctaSecondary) ctaSecondary.textContent = ui.hero.ctaSecondary
+  if (ctaSecondary) {
+    ctaSecondary.textContent = ui.hero.ctaSecondary
+    if (ui.hero.ctaSecondaryUrl) {
+      ctaSecondary.href = ui.hero.ctaSecondaryUrl
+      ctaSecondary.target = '_blank'
+      ctaSecondary.rel = 'noopener noreferrer'
+    }
+  }
 
   // Start countdown to next event
   startCountdown(upcoming.dateISO, config.ui[lang].countdown)

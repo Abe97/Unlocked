@@ -28,7 +28,8 @@
         "tagline": "Da 15 anni, la musica elettronica internazionale in Sicilia.",
         "nextEventLabel": "Prossimo evento",
         "ctaPrimary": "Acquista biglietti",
-        "ctaSecondary": "Scopri il programma"
+        "ctaSecondary": "Visita il sito",
+        "ctaSecondaryUrl": "https://aurafestival.it/"
       },
       "sections": {
         "events": "Eventi 2026",
@@ -82,7 +83,8 @@
         "tagline": "15 years of international electronic music in Sicily.",
         "nextEventLabel": "Next event",
         "ctaPrimary": "Buy tickets",
-        "ctaSecondary": "See full lineup"
+        "ctaSecondary": "Visit the site",
+        "ctaSecondaryUrl": "https://aurafestival.it/"
       },
       "sections": {
         "events": "2026 Events",
@@ -158,7 +160,7 @@
       },
       "artists": ["Joseph Capriati"],
       "artistsTba": true,
-      "ticketUrl": "https://ticketsms.it/placeholder-aura-segesta",
+      "ticketUrl": "https://www.ticketsms.it/collection/Aura-Festival",
       "soldOut": false,
       "tba": false
     },
