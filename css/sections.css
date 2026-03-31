@@ -646,7 +646,7 @@
 
 .storia-track {
   position: relative;
-  height: 260px;
+  height: 480px;
   flex-shrink: 0;
   /* width set by JS */
 }
@@ -655,7 +655,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 130px;
+  top: 240px;
   height: 1px;
   background: var(--border-md);
 }
@@ -669,7 +669,7 @@
 
 .storia-tick {
   position: absolute;
-  top: 130px;
+  top: 240px;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
@@ -679,13 +679,13 @@
 
 .storia-tick-mark {
   width: 1px;
-  height: 10px;
+  height: 12px;
   background: var(--cream-28);
 }
 
 .storia-tick-year {
   font-size: 11px;
-  color: var(--cream-50);
+  color: var(--cream-28);
   letter-spacing: 0.05em;
   margin-top: 8px;
   white-space: nowrap;
@@ -699,25 +699,25 @@
 
 .storia-event {
   position: absolute;
-  top: 126px;          /* dot top edge → center at 130px (line) */
+  top: 236px;          /* dot top edge → center at 240px (line) */
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 18px;
   opacity: 0;
   cursor: default;
 }
 
 .storia-event.above {
   top: auto;
-  bottom: 126px;
+  bottom: 236px;
   flex-direction: column-reverse;
 }
 
 .storia-event-dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: var(--cream-50);
   flex-shrink: 0;
@@ -725,8 +725,8 @@
 }
 
 .storia-event.is-repeat .storia-event-dot {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   background: var(--cream-28);
 }
 
@@ -741,28 +741,29 @@
 
 .storia-event-year {
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 700;
   color: var(--cream-80);
-  letter-spacing: -0.02em;
-  margin-bottom: 4px;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 8px;
   white-space: nowrap;
 }
 
 .storia-event.is-repeat .storia-event-year {
-  font-size: 14px;
+  font-size: 28px;
   color: var(--cream-50);
 }
 
 .storia-event-label {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--cream-50);
   line-height: 1.4;
   white-space: nowrap;
 }
 
 .storia-event.is-repeat .storia-event-label {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--cream-28);
 }
 

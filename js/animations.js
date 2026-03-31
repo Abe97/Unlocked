@@ -317,24 +317,50 @@ function initHistoryAnimation() {
       }
     })
 
-    // Fade in events and year ticks as they scroll into view
+    // Animate events and ticks as they scroll into view
     gsap.utils.toArray('.storia-event, .storia-tick').forEach(el => {
+      const isTick = el.classList.contains('storia-tick')
       const isAbove = el.classList.contains('above')
-      gsap.fromTo(el,
-        { opacity: 0, y: isAbove ? -28 : 28 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          ease: 'power3.out',
-          scrollTrigger: {
-            containerAnimation: tween,
-            trigger: el,
-            start: 'left 90%',
-            toggleActions: 'play none none reverse'
+
+      if (isTick) {
+        // Ticks: simple fade in
+        gsap.fromTo(el,
+          { opacity: 0 },
+          {
+            opacity: 1,
+            duration: 0.4,
+            ease: 'power2.out',
+            scrollTrigger: {
+              containerAnimation: tween,
+              trigger: el,
+              start: 'left 90%',
+              toggleActions: 'play none none none'
+            }
           }
+        )
+        return
+      }
+
+      // Events: dot grows from the line, then text fades in
+      const dot     = el.querySelector('.storia-event-dot')
+      const content = el.querySelector('.storia-event-content')
+
+      // Set initial child states (parent stays opacity:0 via CSS)
+      gsap.set(dot,     { scale: 0, transformOrigin: 'center center' })
+      gsap.set(content, { opacity: 0, y: isAbove ? 16 : -16 })
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          containerAnimation: tween,
+          trigger: el,
+          start: 'left 92%',
+          toggleActions: 'play none none none'
         }
-      )
+      })
+
+      tl.set(el, { opacity: 1 })
+        .to(dot, { scale: 1, duration: 0.35, ease: 'back.out(2.5)' })
+        .to(content, { opacity: 1, y: 0, duration: 0.55, ease: 'power3.out' }, '-=0.1')
     })
   }
 

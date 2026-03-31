@@ -335,7 +335,7 @@ function populateHistory(config, lang) {
         <div class="storia-event-dot"></div>
         <div class="storia-event-content">
           <div class="storia-event-year">${m.year}</div>
-          ${!m.isRepeat ? `<div class="storia-event-label">${m.label[lang]}</div>` : ''}
+          <div class="storia-event-label">${m.label[lang]}</div>
         </div>
       </div>`
     }).join('')
