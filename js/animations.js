@@ -547,6 +547,7 @@ function initImageSlider() {
     const outInner = outSlide.querySelector('.img-slide-inner')
     const inInner  = inSlide.querySelector('.img-slide-inner')
 
+    gsap.set(outInner, { x: 0 }) // clear any drag offset
     gsap.set(inSlide, { zIndex: 2 })
     gsap.set(outSlide, { zIndex: 1 })
     gsap.set(inInner, { xPercent: dir * 105, skewX: dir * -14 })
@@ -580,6 +581,43 @@ function initImageSlider() {
     clearInterval(autoTimer)
     autoTimer = setInterval(() => goTo((current + 1) % total, 1), 5000)
   })
+
+  // Drag / swipe support
+  const sliderEl = section.querySelector('.img-slider')
+  let dragStartX = 0
+  let dragDeltaX = 0
+  let isDragging = false
+
+  sliderEl.addEventListener('pointerdown', e => {
+    if (animating) return
+    dragStartX = e.clientX
+    dragDeltaX = 0
+    isDragging = true
+    sliderEl.setPointerCapture(e.pointerId)
+  })
+
+  sliderEl.addEventListener('pointermove', e => {
+    if (!isDragging) return
+    dragDeltaX = e.clientX - dragStartX
+    const curInner = slides[current].querySelector('.img-slide-inner')
+    gsap.set(curInner, { x: dragDeltaX * 0.3 })
+  })
+
+  function endDrag() {
+    if (!isDragging) return
+    isDragging = false
+    const curInner = slides[current].querySelector('.img-slide-inner')
+    if (Math.abs(dragDeltaX) > 50) {
+      gsap.set(curInner, { x: 0 })
+      const dir = dragDeltaX < 0 ? 1 : -1
+      goTo((current + dir + total) % total, dir)
+    } else {
+      gsap.to(curInner, { x: 0, duration: 0.35, ease: 'power2.out' })
+    }
+  }
+
+  sliderEl.addEventListener('pointerup', endDrag)
+  sliderEl.addEventListener('pointercancel', endDrag)
 
   updateUI(0)
 }
