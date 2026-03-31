@@ -24,6 +24,7 @@ function initAnimations(config) {
   initBrandsAnimation()
   initHistoryAnimation()
   initSponsorAnimation()
+  initImageSlider()
   initContactAnimation()
   initFooterAnimation()
   initCursor()
@@ -478,6 +479,94 @@ function initImageInterludes() {
       )
     }
   })
+}
+
+// ── Photo Gallery Slider ──────────────────────────────────────────────
+function initImageSlider() {
+  const section = document.querySelector('.img-slider-section')
+  if (!section) return
+
+  const slides    = gsap.utils.toArray('.img-slide')
+  const dotsCont  = section.querySelector('.slider-dots')
+  const counterEl = section.querySelector('.slider-current')
+  const totalEl   = section.querySelector('.slider-total')
+  const total     = slides.length
+  let current  = 0
+  let animating = false
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button')
+    dot.className = 'slider-dot' + (i === 0 ? ' active' : '')
+    dot.setAttribute('aria-label', `Immagine ${i + 1}`)
+    dot.addEventListener('click', () => goTo(i, i > current ? 1 : -1))
+    dotsCont.appendChild(dot)
+  })
+  if (totalEl) totalEl.textContent = String(total).padStart(2, '0')
+
+  // Initial states: first slide visible, rest hidden off-screen
+  slides.forEach((slide, i) => {
+    const inner = slide.querySelector('.img-slide-inner')
+    if (i === 0) {
+      gsap.set(slide, { opacity: 1, zIndex: 1 })
+      gsap.set(inner, { xPercent: 0, skewX: 0 })
+    } else {
+      gsap.set(slide, { opacity: 1, zIndex: 0 })
+      gsap.set(inner, { xPercent: 105, skewX: 0 })
+    }
+  })
+
+  function updateUI(idx) {
+    section.querySelectorAll('.slider-dot').forEach((d, i) =>
+      d.classList.toggle('active', i === idx)
+    )
+    if (counterEl) counterEl.textContent = String(idx + 1).padStart(2, '0')
+  }
+
+  function goTo(next, dir = 1) {
+    if (animating || next === current) return
+    animating = true
+
+    const outSlide = slides[current]
+    const inSlide  = slides[next]
+    const outInner = outSlide.querySelector('.img-slide-inner')
+    const inInner  = inSlide.querySelector('.img-slide-inner')
+
+    gsap.set(inSlide, { zIndex: 2 })
+    gsap.set(outSlide, { zIndex: 1 })
+    gsap.set(inInner, { xPercent: dir * 105, skewX: dir * -14 })
+
+    const tl = gsap.timeline({
+      onComplete: () => {
+        gsap.set(outSlide, { zIndex: 0 })
+        gsap.set(outInner, { xPercent: dir * -105, skewX: 0 })
+        current = next
+        animating = false
+        updateUI(current)
+      }
+    })
+
+    tl.to(outInner, { xPercent: dir * -30, skewX: dir * 10, duration: 0.85, ease: 'power2.in' }, 0)
+      .to(outSlide,  { opacity: 0, duration: 0.4, ease: 'power2.in' }, 0.45)
+      .to(inInner,   { xPercent: 0, skewX: 0, duration: 0.85, ease: 'power2.out' }, 0.05)
+  }
+
+  section.querySelector('.slider-prev')?.addEventListener('click', () =>
+    goTo((current - 1 + total) % total, -1)
+  )
+  section.querySelector('.slider-next')?.addEventListener('click', () =>
+    goTo((current + 1) % total, 1)
+  )
+
+  // Auto-advance, paused on hover
+  let autoTimer = setInterval(() => goTo((current + 1) % total, 1), 5000)
+  section.addEventListener('mouseenter', () => clearInterval(autoTimer))
+  section.addEventListener('mouseleave', () => {
+    clearInterval(autoTimer)
+    autoTimer = setInterval(() => goTo((current + 1) % total, 1), 5000)
+  })
+
+  updateUI(0)
 }
 
 // ── Mobile sticky bar hide in events section ──────────────────────────
