@@ -162,7 +162,8 @@
       "artistsTba": true,
       "ticketUrl": "https://www.ticketsms.it/collection/Aura-Festival",
       "soldOut": false,
-      "tba": false
+      "tba": false,
+      "image": "asset/img/25.07%20UMF%20600X600%20(2)%20(1).jpg"
     },
     {
       "id": "aura-giugno-2026",
@@ -181,11 +182,13 @@
       "artistsTba": true,
       "ticketUrl": "",
       "soldOut": false,
-      "tba": true
+      "tba": true,
+      "image": "asset/img/25.07%20UMF%20600X600%20(2)%20(1).jpg"
     },
     {
       "id": "umf-castellammare-2026",
       "brand": "UMF",
+      "eventName": "Unlocked Music Festival",
       "brandIntensity": "medium",
       "date": {
         "it": "24 – 25 – 26 Luglio",
@@ -200,7 +203,8 @@
       "artistsTba": false,
       "ticketUrl": "https://ticketsms.it/placeholder-umf-2026",
       "soldOut": false,
-      "tba": false
+      "tba": false,
+      "image": "asset/img/25.07%20UMF%20600X600%20(2)%20(1).jpg"
     },
     {
       "id": "aura-gibellina-2026",
@@ -212,14 +216,15 @@
       },
       "dateISO": "2026-08-14",
       "location": {
-        "it": "Sistema delle Piazze, Gibellina",
-        "en": "Piazze System, Gibellina"
+        "it": "TBA",
+        "en": "TBA"
       },
-      "artists": ["Joseph Capriati"],
-      "artistsTba": false,
-      "ticketUrl": "https://ticketsms.it/placeholder-aura-gibellina",
+      "artists": [],
+      "artistsTba": true,
+      "ticketUrl": "",
       "soldOut": false,
-      "tba": false
+      "tba": true,
+      "image": "asset/img/25.07%20UMF%20600X600%20(2)%20(1).jpg"
     },
     {
       "id": "aura-alcamo-2026",
@@ -231,14 +236,15 @@
       },
       "dateISO": "2026-08-21",
       "location": {
-        "it": "Castello di Alcamo",
-        "en": "Castle of Alcamo"
+        "it": "TBA",
+        "en": "TBA"
       },
-      "artists": ["Deborah De Luca"],
+      "artists": [],
       "artistsTba": true,
-      "ticketUrl": "https://ticketsms.it/placeholder-aura-alcamo",
+      "ticketUrl": "",
       "soldOut": false,
-      "tba": false
+      "tba": true,
+      "image": "asset/img/25.07%20UMF%20600X600%20(2)%20(1).jpg"
     }
   ],
 
@@ -329,10 +335,13 @@
       "locations": 4
     },
     "milestones": [
-      { "year": 2019, "label": { "it": "Parco Archeologico di Selinunte", "en": "Selinunte Archaeological Park" } },
-      { "year": 2022, "label": { "it": "Parco Archeologico di Selinunte", "en": "Selinunte Archaeological Park" } },
-      { "year": 2023, "label": { "it": "Parco Archeologico di Selinunte", "en": "Selinunte Archaeological Park" } },
-      { "year": 2025, "label": { "it": "Porto Nuovo, Castellammare del Golfo", "en": "Porto Nuovo, Castellammare del Golfo" } }
+      { "year": 2012, "label": { "it": "Velodromo Paolo Borsellino, Palermo", "en": "Velodromo Paolo Borsellino, Palermo" } },
+      { "year": 2013, "label": { "it": "Sea Club", "en": "Sea Club" } },
+      { "year": 2014, "label": { "it": "Cala Marina", "en": "Cala Marina" } },
+      { "year": 2015, "label": { "it": "Castello a Mare, Palermo", "en": "Castello a Mare, Palermo" } },
+      { "year": 2016, "yearEnd": 2025, "label": { "it": "Mob Disco Theatre", "en": "Mob Disco Theatre" } },
+      { "year": 2024, "label": { "it": "Cantieri Culturali della Zisa, Palermo", "en": "Cantieri Culturali della Zisa, Palermo" } },
+      { "year": 2025, "label": { "it": "UMF Castellammare del Golfo", "en": "UMF Castellammare del Golfo" } }
     ]
   }
 }

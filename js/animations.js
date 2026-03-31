@@ -250,9 +250,9 @@ function initHistoryAnimation() {
   const titleEl = document.querySelector('#storia .section-title')
   if (titleEl) {
     gsap.from(titleEl, {
-      scrollTrigger: { trigger: titleEl, start: 'top 85%', toggleActions: 'play none none reverse' },
+      scrollTrigger: { trigger: '#storia', start: 'top 85%', toggleActions: 'play none none reverse' },
       opacity: 0,
-      y: 30,
+      y: 20,
       duration: 0.8,
       ease: 'power3.out'
     })
@@ -264,90 +264,80 @@ function initHistoryAnimation() {
       const target = parseInt(el.dataset.target, 10)
       if (!target) return
 
+      const obj = { val: 0 }
+      gsap.to(obj, {
+        scrollTrigger: {
+          trigger: '#storia',
+          start: 'top 60%',
+          toggleActions: 'play none none none',
+          invalidateOnRefresh: true
+        },
+        val: target,
+        duration: 2,
+        ease: 'power2.out',
+        onUpdate: function() {
+          const v = Math.round(obj.val)
+          if (target >= 10000) {
+            el.textContent = Math.round(v / 1000) + 'K'
+          } else {
+            el.textContent = v + '+'
+          }
+        },
+        onComplete: function() {
+          if (target >= 10000) {
+            el.textContent = Math.round(target / 1000) + 'K'
+          } else {
+            el.textContent = target + '+'
+          }
+        }
+      })
+    })
+  }
+
+  setTimeout(initCounters, 150)
+
+  // Horizontal scroll timeline
+  function initTimeline() {
+    const track = document.querySelector('.storia-track')
+    if (!track) return
+
+    const getScrollDist = () => Math.max(0, track.scrollWidth - window.innerWidth)
+
+    const tween = gsap.to(track, {
+      x: () => -getScrollDist(),
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '#storia',
+        pin: true,
+        start: 'top top',
+        end: () => '+=' + getScrollDist(),
+        scrub: 1,
+        anticipatePin: 1,
+        invalidateOnRefresh: true
+      }
+    })
+
+    // Fade in events and year ticks as they scroll into view
+    gsap.utils.toArray('.storia-event, .storia-tick').forEach(el => {
+      const isAbove = el.classList.contains('above')
       gsap.fromTo(el,
-        { textContent: 0 },
+        { opacity: 0, y: isAbove ? -12 : 12 },
         {
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 80%',
-            toggleActions: 'play none none none',
-            invalidateOnRefresh: true
-          },
-          textContent: target,
-          duration: 2,
+          opacity: 1,
+          y: 0,
           ease: 'power2.out',
-          snap: { textContent: 1 },
-          onUpdate: function() {
-            // Format large numbers
-            const val = Math.round(parseFloat(el.textContent))
-            if (target >= 10000) {
-              el.textContent = (val / 1000).toFixed(0) + 'K'
-            } else if (target >= 100) {
-              el.textContent = val + '+'
-            } else {
-              el.textContent = val + '+'
-            }
+          scrollTrigger: {
+            containerAnimation: tween,
+            trigger: el,
+            start: 'left 85%',
+            toggleActions: 'play none none reverse'
           }
         }
       )
     })
   }
 
-  setTimeout(initCounters, 150)
-
-  // Timeline line draw
-  const line = document.querySelector('.timeline-line')
-  if (line) {
-    gsap.from(line, {
-      scrollTrigger: {
-        trigger: '.history-timeline',
-        start: 'top 80%',
-        toggleActions: 'play none none reverse',
-        invalidateOnRefresh: true
-      },
-      scaleY: 0,
-      duration: 1.2,
-      ease: 'power3.out'
-    })
-  }
-
-  // Timeline items
-  function animateTimeline() {
-    gsap.utils.toArray('.timeline-item').forEach((item, i) => {
-      gsap.from(item, {
-        scrollTrigger: {
-          trigger: item,
-          start: 'top 88%',
-          toggleActions: 'play none none reverse',
-          invalidateOnRefresh: true
-        },
-        x: -30,
-        opacity: 0,
-        duration: 0.6,
-        delay: i * 0.1,
-        ease: 'power3.out'
-      })
-    })
-  }
-
-  setTimeout(animateTimeline, 150)
-
-  // Gallery
-  gsap.utils.toArray('.gallery-item').forEach((item, i) => {
-    gsap.from(item, {
-      scrollTrigger: {
-        trigger: item,
-        start: 'top 88%',
-        toggleActions: 'play none none reverse',
-        invalidateOnRefresh: true
-      },
-      opacity: 0,
-      scale: 0.96,
-      duration: 0.6,
-      delay: i * 0.08,
-      ease: 'power3.out'
-    })
-  })
+  setTimeout(initTimeline, 200)
 }
 
 // ── Sponsors ──────────────────────────────────────────────────────────

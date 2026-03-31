@@ -222,72 +222,46 @@
 
     <!-- ── STORIA ────────────────────────────────────────────────── -->
     <section id="storia" class="section" aria-labelledby="storia-title">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-counter" aria-hidden="true">04 / 05</div>
-          <h2 class="section-title" id="storia-title">15 anni di storia</h2>
-          <p class="section-subtitle">
-            Dal Parco Archeologico di Selinunte al Porto Nuovo di Castellammare del Golfo,
-            Unlocked porta la musica elettronica internazionale nei luoghi più suggestivi della Sicilia.
-          </p>
-        </div>
 
-        <div class="history-inner">
-          <!-- Stats -->
-          <div class="history-stats" role="list" aria-label="Statistiche">
-            <div class="stat-block" id="stat-years" role="listitem">
-              <div class="stat-num" data-target="15">15+</div>
-              <div class="stat-label">anni di storia</div>
+      <!-- Top bar: title + stats (stays visible while pinned) -->
+      <div class="storia-top">
+        <div class="container">
+          <div class="storia-header-row">
+            <div class="storia-title-block">
+              <div class="section-counter" aria-hidden="true">04 / 05</div>
+              <h2 class="section-title" id="storia-title">15 anni di storia</h2>
             </div>
-            <div class="stat-block" id="stat-events" role="listitem">
-              <div class="stat-num" data-target="400">400+</div>
-              <div class="stat-label">eventi</div>
-            </div>
-            <div class="stat-block" id="stat-attendees" role="listitem">
-              <div class="stat-num" data-target="30000">30K</div>
-              <div class="stat-label">live ogni anno</div>
-            </div>
-            <div class="stat-block" id="stat-locations" role="listitem">
-              <div class="stat-num" data-target="4">4+</div>
-              <div class="stat-label">location storiche</div>
-            </div>
-          </div>
-
-          <!-- Text + Timeline -->
-          <div class="history-text">
-            <p class="history-body">
-              Dal 2009, Unlocked costruisce un'identità unica nel panorama della musica elettronica italiana.
-              Tre brand, una visione: portare artisti internazionali nei luoghi che definiscono la Sicilia.
-            </p>
-
-            <div class="history-timeline" aria-label="Timeline storica">
-              <div class="timeline-line" aria-hidden="true"></div>
-              <div class="history-timeline-items">
-                <!-- Populated by config-loader.js -->
+            <div class="history-stats" role="list" aria-label="Statistiche">
+              <div class="stat-block" id="stat-years" role="listitem">
+                <div class="stat-num" data-target="15">0</div>
+                <div class="stat-label">anni di storia</div>
+              </div>
+              <div class="stat-block" id="stat-events" role="listitem">
+                <div class="stat-num" data-target="400">0</div>
+                <div class="stat-label">eventi</div>
+              </div>
+              <div class="stat-block" id="stat-attendees" role="listitem">
+                <div class="stat-num" data-target="30000">0</div>
+                <div class="stat-label">live ogni anno</div>
+              </div>
+              <div class="stat-block" id="stat-locations" role="listitem">
+                <div class="stat-num" data-target="4">0</div>
+                <div class="stat-label">location storiche</div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Gallery -->
-        <div class="history-gallery" role="list" aria-label="Gallery fotografica">
-          <div class="gallery-item" role="listitem">
-            <img src="asset/img/RPK28054.jpg" alt="Unlocked" loading="lazy">
-          </div>
-          <div class="gallery-item" role="listitem">
-            <img src="asset/img/RPK28328.jpg" alt="Unlocked" loading="lazy">
-          </div>
-          <div class="gallery-item" role="listitem">
-            <img src="asset/img/2024%20-%20UNLOCKED%20MUSIC%20FESTIVAL.jpg" alt="Unlocked Music Festival 2024" loading="lazy">
-          </div>
-          <div class="gallery-item" role="listitem">
-            <img src="asset/img/Copia%20di%20DJI_0247.jpg" alt="Unlocked" loading="lazy">
-          </div>
-          <div class="gallery-item" role="listitem">
-            <img src="asset/img/Copia%20di%20DJI_0255.jpg" alt="Unlocked" loading="lazy">
-          </div>
+      <!-- Horizontal timeline track -->
+      <div class="storia-track-wrap">
+        <div class="storia-track" aria-label="Timeline storica">
+          <div class="storia-h-line" aria-hidden="true"></div>
+          <div class="storia-year-ticks" aria-hidden="true"></div>
+          <div class="storia-milestones" role="list"></div>
         </div>
       </div>
+
     </section>
 
     <!-- ── IMAGE INTERLUDE 3 ─────────────────────────────────────── -->

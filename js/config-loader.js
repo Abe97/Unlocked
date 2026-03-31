@@ -183,9 +183,11 @@ function populateEvents(config, lang) {
     const date = event.date[lang]
     const location = event.location[lang]
 
+    const eventName = event.eventName || event.brand
+
     const artistsHtml = event.artists.length > 0
       ? event.artists.map(a => `<span class="card-artist">${a}</span>`).join('')
-      : ''
+      : (event.artistsTba ? `<span class="card-artist" style="color:var(--cream-50)">TBA</span>` : '')
 
     const tbaArtistNote = event.artistsTba && event.artists.length > 0
       ? `<span class="card-artist" style="color:var(--cream-28)">+ ${lang === 'it' ? 'altri TBA' : 'more TBA'}</span>`
@@ -197,29 +199,31 @@ function populateEvents(config, lang) {
     } else if (event.tba) {
       actionHtml = `<span class="badge badge-tba">${ui.eventCard.tbaLabel}</span>`
     } else if (event.ticketUrl) {
-      actionHtml = `<a class="card-cta" href="${event.ticketUrl}" target="_blank" rel="noopener" aria-label="${ui.eventCard.ticketsLabel} — ${event.brand}">
+      actionHtml = `<a class="card-cta" href="${event.ticketUrl}" target="_blank" rel="noopener" aria-label="${ui.eventCard.ticketsLabel} — ${eventName}">
         ${ui.eventCard.ticketsLabel} <span aria-hidden="true">→</span>
       </a>`
     }
 
     return `
     <article class="event-card ${brandClass} ${tbaClass}" data-event-id="${event.id}">
-      <div class="card-date-col">
-        <div class="card-date-day" style="color:${style.color}">${date}</div>
-        ${getBrandLogo(event.brand)
-          ? `<img class="card-brand-logo" src="${getBrandLogo(event.brand)}" alt="${event.brand}" loading="lazy">`
-          : `<div class="card-brand-name" style="color:${style.color}">${event.brand}</div>`
-        }
-      </div>
-      <div class="card-main">
+      <div class="card-info">
+        <div class="card-meta">
+          <span class="card-mode" style="color:${style.color}">${eventName}</span>
+          <div class="card-date-day" style="color:${style.color}">${date}</div>
+        </div>
         <div class="card-artists">
           ${artistsHtml}
           ${tbaArtistNote}
         </div>
         <div class="card-location">${location}</div>
+        <div class="card-action">
+          ${actionHtml}
+        </div>
       </div>
-      <div class="card-action">
-        ${actionHtml}
+      <div class="card-poster">
+        <div class="card-poster-inner">
+          ${event.image ? `<img src="${event.image}" alt="${eventName}" loading="lazy">` : ''}
+        </div>
       </div>
     </article>`
   }).join('')
@@ -266,9 +270,6 @@ function populateHistory(config, lang) {
   const titleEl = document.querySelector('#storia .section-title')
   if (titleEl) titleEl.textContent = ui.sections.history
 
-  const subEl = document.querySelector('#storia .section-subtitle')
-  if (subEl) subEl.textContent = ui.sections.historySubtitle
-
   // Stats — set data-target for GSAP counter animation
   const statsMap = [
     { selector: '#stat-years',     value: h.stats.years,          label: lang === 'it' ? 'anni di storia' : 'years of history' },
@@ -287,16 +288,41 @@ function populateHistory(config, lang) {
     if (lblEl) lblEl.textContent = label
   })
 
-  // Timeline
-  const timeline = document.querySelector('.history-timeline-items')
-  if (timeline) {
-    timeline.innerHTML = h.milestones.map(m => `
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-year">${m.year}</div>
-        <div class="timeline-label">${m.label[lang]}</div>
-      </div>
-    `).join('')
+  // Horizontal timeline
+  const START = 2012, END = 2026, STEP = 200, PAD = 200
+
+  const track = document.querySelector('.storia-track')
+  if (track) track.style.width = (PAD + (END - START) * STEP + PAD) + 'px'
+
+  // Year ticks (every 2 years)
+  const ticksEl = document.querySelector('.storia-year-ticks')
+  if (ticksEl) {
+    let html = ''
+    for (let y = START; y <= END; y += 2) {
+      const x = PAD + (y - START) * STEP
+      html += `<div class="storia-tick" style="left:${x}px">
+        <div class="storia-tick-mark"></div>
+        <div class="storia-tick-year">${y}</div>
+      </div>`
+    }
+    ticksEl.innerHTML = html
+  }
+
+  // Event nodes
+  const milestonesEl = document.querySelector('.storia-milestones')
+  if (milestonesEl) {
+    milestonesEl.innerHTML = h.milestones.map((m, i) => {
+      const x = PAD + (m.year - START) * STEP
+      const yearLabel = m.yearEnd ? `${m.year} – ${m.yearEnd}` : String(m.year)
+      const aboveClass = i % 2 === 1 ? 'above' : ''
+      return `<div class="storia-event ${aboveClass}" style="left:${x}px" role="listitem">
+        <div class="storia-event-dot"></div>
+        <div class="storia-event-content">
+          <div class="storia-event-year">${yearLabel}</div>
+          <div class="storia-event-label">${m.label[lang]}</div>
+        </div>
+      </div>`
+    }).join('')
   }
 }
 

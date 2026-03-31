@@ -5,6 +5,10 @@
  */
 
 (async function init() {
+  // Prevent browser scroll restoration so GSAP initialises at y=0
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
+  window.scrollTo(0, 0)
+
   // Load config
   let config
   try {
