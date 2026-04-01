@@ -509,10 +509,8 @@
 
 .brand-panel-logo {
   display: block;
-  width: auto;
-  max-width: 280px;
+  width: 200px;
   height: auto;
-  max-height: 160px;
   object-fit: contain;
   object-position: left center;
   opacity: 0.75;

@@ -11,9 +11,9 @@ const intensityMap = {
 }
 
 const brandLogoMap = {
-  'AURA': 'asset/img/Aura_Logo_logo%20completo%20%2B%20claim%20bianco.svg',
-  'UMF':  'asset/img/UMF%20BIANCO.png',
-  'SOLO': 'asset/img/solo-logo.svg'
+  'AURA': 'asset/img/aura.svg',
+  'UMF':  'asset/img/UMF.svg',
+  'SOLO': 'asset/img/solo.svg'
 }
 
 function getBrandLogo(brand) {
@@ -247,7 +247,7 @@ function populateBrands(config, lang) {
   panelsEl.innerHTML = brands.map(({ key, data }) => {
     const style = getBrandStyle(data.brandIntensity)
     const discoverText = lang === 'it' ? 'Scopri →' : 'Discover →'
-    const logo = getBrandLogo(data.name || data.acronym || key.toUpperCase())
+    const logo = getBrandLogo(data.acronym || data.name || key.toUpperCase())
     return `
     <div class="brand-panel" data-brand="${key}">
       ${logo
