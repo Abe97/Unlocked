@@ -135,18 +135,15 @@
 }
 
 .hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(80px, 14vw, 180px);
-  font-weight: 800;
-  line-height: 0.88;
-  letter-spacing: -0.04em;
-  color: var(--cream);
   margin-bottom: 28px;
-  overflow: hidden;
+  overflow: visible;
 }
 
-.hero-title .char {
-  display: inline-block;
+.hero-title-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  fill: var(--cream);
 }
 
 .hero-sub {
@@ -1169,17 +1166,22 @@ footer {
 }
 
 .footer-logo {
-  font-family: var(--font-display);
-  font-size: 26px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  color: var(--cream-50);
   text-decoration: none;
-  transition: color 0.2s;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
 }
 
 .footer-logo:hover {
-  color: var(--cream);
+  opacity: 0.9;
+}
+
+.footer-logo-img {
+  height: 22px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
 }
 
 .footer-links {

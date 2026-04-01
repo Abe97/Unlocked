@@ -92,18 +92,28 @@
 }
 
 .nav-logo {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  color: var(--cream);
+  display: flex;
+  align-items: center;
   text-decoration: none;
   flex-shrink: 0;
-  transition: font-size 0.3s ease;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
 }
 
-.nav.scrolled .nav-logo {
-  font-size: 18px;
+.nav-logo:hover {
+  opacity: 1;
+}
+
+.nav-logo-img {
+  height: 20px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+  transition: height 0.3s ease;
+}
+
+.nav.scrolled .nav-logo-img {
+  height: 17px;
 }
 
 .nav-links {

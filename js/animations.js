@@ -64,12 +64,7 @@ function initHeroAnimation() {
   const titleEl = document.querySelector('.hero-title')
   if (!titleEl) return
 
-  // Split "UNLOCKED" into individual char spans
-  const text = titleEl.textContent.trim()
-  titleEl.innerHTML = text.split('').map(c =>
-    `<span class="char" style="display:inline-block">${c}</span>`
-  ).join('')
-
+  // SVG logo: each letter is a <g class="char"> — animate directly
   const tl = gsap.timeline({ delay: 0.2 })
 
   tl.from('.hero-title .char', {
