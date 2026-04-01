@@ -1146,11 +1146,10 @@
     right: 16px;
   }
 
-  .img-slider-section:hover .img-slide .img-slide-inner img,
-  .img-interlude:hover .img-interlude-inner img,
-  .event-card:hover .card-poster-inner img {
-    filter: grayscale(1);
-    transform: none;
+  .img-slide-inner img,
+  .img-interlude-inner img,
+  .card-poster-inner img {
+    filter: grayscale(0);
   }
 }
 
