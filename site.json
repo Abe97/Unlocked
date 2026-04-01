@@ -191,8 +191,8 @@
       "eventName": "Unlocked Music Festival",
       "brandIntensity": "medium",
       "date": {
-        "it": "24 – 25 – 26 Luglio",
-        "en": "July 24–25–26"
+        "it": "24 – 25 Luglio",
+        "en": "July 24–25"
       },
       "dateISO": "2026-07-24",
       "location": {
@@ -339,9 +339,16 @@
       { "year": 2013, "label": { "it": "Sea Club", "en": "Sea Club" } },
       { "year": 2014, "label": { "it": "Cala Marina", "en": "Cala Marina" } },
       { "year": 2015, "label": { "it": "Castello a Mare, Palermo", "en": "Castello a Mare, Palermo" } },
-      { "year": 2016, "yearEnd": 2023, "label": { "it": "Mob Disco Theatre", "en": "Mob Disco Theatre" } },
+      { "year": 2016, "label": { "it": "Mob Disco Theatre", "en": "Mob Disco Theatre" } },
+      { "year": 2017, "label": { "it": "San Vito Lo Capo", "en": "San Vito Lo Capo" } },
+      { "year": 2018, "label": { "it": "Capo dei Greci, Taormina", "en": "Capo dei Greci, Taormina" } },
+      { "year": 2019, "label": { "it": "Cave di Cusa, Pantelleria – Castelvetrano", "en": "Cave di Cusa, Castelvetrano – Pantelleria" } },
+      { "year": 2020, "label": { "it": "Catania", "en": "Catania" } },
+      { "year": 2021, "label": { "it": "Mob Disco Theatre", "en": "Mob Disco Theatre" } },
+      { "year": 2022, "label": { "it": "Mob Disco Theatre", "en": "Mob Disco Theatre" } },
+      { "year": 2023, "label": { "it": "Parco Archeologico di Selinunte", "en": "Archaeological Park of Selinunte" } },
       { "year": 2024, "label": { "it": "Cantieri Culturali della Zisa, Palermo", "en": "Cantieri Culturali della Zisa, Palermo" } },
-      { "year": 2025, "label": { "it": "UMF Castellammare del Golfo", "en": "UMF Castellammare del Golfo" } }
+      { "year": 2025, "label": { "it": "Castellammare del Golfo", "en": "Castellammare del Golfo" } }
     ]
   }
 }

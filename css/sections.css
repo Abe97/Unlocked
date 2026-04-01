@@ -791,7 +791,7 @@
 
   .storia-event-dot-wrap {
     left: 20px;
-    transform: none;
+    transform: translateX(-50%);
   }
 
   .storia-event-year {
@@ -1144,6 +1144,13 @@
   .slider-counter {
     top: 16px;
     right: 16px;
+  }
+
+  .img-slider-section:hover .img-slide .img-slide-inner img,
+  .img-interlude:hover .img-interlude-inner img,
+  .event-card:hover .card-poster-inner img {
+    filter: grayscale(1);
+    transform: none;
   }
 }
 
