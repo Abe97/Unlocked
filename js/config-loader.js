@@ -246,7 +246,6 @@ function populateBrands(config, lang) {
 
   panelsEl.innerHTML = brands.map(({ key, data }) => {
     const style = getBrandStyle(data.brandIntensity)
-    const discoverText = lang === 'it' ? 'Scopri →' : 'Discover →'
     const logo = getBrandLogo(data.acronym || data.name || key.toUpperCase())
     return `
     <div class="brand-panel" data-brand="${key}">
@@ -256,8 +255,6 @@ function populateBrands(config, lang) {
       }
       <div class="brand-panel-tagline">${data.tagline[lang]}</div>
       <p class="brand-panel-desc">${data.description[lang]}</p>
-      <div class="brand-panel-divider"></div>
-      <a class="brand-panel-cta" href="#eventi" aria-label="${data.name}">${discoverText}</a>
     </div>`
   }).join('')
 }
