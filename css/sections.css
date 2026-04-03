@@ -146,6 +146,12 @@
   fill: var(--cream);
 }
 
+.hero-title-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .hero-sub {
   font-size: 13px;
   font-weight: 300;

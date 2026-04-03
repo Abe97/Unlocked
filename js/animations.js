@@ -64,14 +64,11 @@ function initHeroAnimation() {
   const titleEl = document.querySelector('.hero-title')
   if (!titleEl) return
 
-  // SVG logo: each letter is a <g class="char"> — animate directly
   const tl = gsap.timeline({ delay: 0.2 })
 
-  tl.from('.hero-title .char', {
-    y: 120,
+  tl.from('.hero-title-video', {
     opacity: 0,
     duration: 1.2,
-    stagger: 0.06,
     ease: 'power4.out'
   })
   .from('.hero-sub', {
