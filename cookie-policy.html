@@ -13,57 +13,89 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/sections.css">
   <style>
-    .policy-page {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 140px 48px 120px;
+    .policy-hero {
+      padding: 140px 48px 80px;
+      border-bottom: 1px solid var(--border);
     }
-    .policy-page h1 {
-      font-family: var(--font-display);
-      font-size: clamp(32px, 5vw, 56px);
-      color: var(--cream);
-      margin-bottom: 12px;
-    }
-    .policy-page .policy-date {
-      font-size: 11px;
-      color: var(--cream-28);
-      letter-spacing: 0.1em;
-      margin-bottom: 56px;
-    }
-    .policy-page h2 {
-      font-size: 13px;
+    .policy-hero-label {
+      font-size: 8px;
       font-weight: 500;
-      color: var(--cream);
-      letter-spacing: 0.1em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      margin: 40px 0 12px;
+      color: var(--cream-28);
+      margin-bottom: 20px;
     }
-    .policy-page p, .policy-page li {
+    .policy-hero h1 {
+      font-size: clamp(40px, 6vw, 80px);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 0.95;
+      color: var(--cream);
+    }
+    .policy-hero .policy-date {
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--cream-28);
+      letter-spacing: 0.08em;
+      margin-top: 20px;
+    }
+    .policy-body {
+      padding: 0 48px 96px;
+    }
+    .policy-section {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+    }
+    .policy-section:last-child {
+      border-bottom: none;
+    }
+    .policy-section-label {
+      font-size: 8px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--cream-28);
+      padding-top: 3px;
+    }
+    .policy-section-content p {
       font-size: 13px;
       font-weight: 300;
       color: var(--cream-50);
       line-height: 1.75;
+      margin-bottom: 12px;
     }
-    .policy-page ul {
-      padding-left: 20px;
-      margin: 8px 0 16px;
+    .policy-section-content p:last-child { margin-bottom: 0; }
+    .policy-section-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
-    .policy-page li {
-      margin-bottom: 6px;
+    .policy-section-content li {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--cream-50);
+      line-height: 1.75;
+      padding: 10px 0;
+      border-top: 1px solid var(--border);
     }
-    .policy-page strong {
+    .policy-section-content li:first-child { border-top: none; }
+    .policy-section-content strong {
       color: var(--cream-80);
       font-weight: 400;
     }
-    .policy-page a {
+    .policy-section-content a {
       color: var(--cream-50);
       text-decoration: underline;
+      text-underline-offset: 3px;
     }
-    .policy-page a:hover {
-      color: var(--cream);
-    }
+    .policy-section-content a:hover { color: var(--cream); }
     @media (max-width: 767px) {
-      .policy-page { padding: 120px 24px 80px; }
+      .policy-hero { padding: 120px 24px 56px; }
+      .policy-body { padding: 0 24px 72px; }
+      .policy-section { grid-template-columns: 1fr; gap: 16px; }
     }
   </style>
   <!-- Google Tag Manager -->
@@ -96,60 +128,90 @@
     </div>
   </nav>
 
-  <main class="policy-page">
+  <div class="policy-hero">
+    <p class="policy-hero-label">Informativa legale</p>
     <h1>Cookie Policy</h1>
     <p class="policy-date">Ultima modifica: 16 gennaio 2025</p>
+  </div>
 
-    <p>Questo documento contiene informazioni sulle tecnologie che consentono a questo Sito Web di raggiungere gli scopi descritti. Queste tecnologie permettono al Titolare di raccogliere e salvare informazioni o di utilizzare risorse sul dispositivo dell'Utente durante l'interazione con il sito.</p>
+  <main class="policy-body">
 
-    <h2>Strumenti di Tracciamento Necessari</h2>
-    <p>Cookie tecnici strettamente necessari per il funzionamento del servizio.</p>
-    <ul>
-      <li><strong>Google Tag Manager (Google LLC)</strong> — Servizio di gestione dei tag. Dati trattati: Dati di utilizzo, Strumenti di Tracciamento. Sede: Stati Uniti.</li>
-    </ul>
+    <div class="policy-section">
+      <div class="policy-section-label">Panoramica</div>
+      <div class="policy-section-content">
+        <p>Questo documento contiene informazioni sulle tecnologie che consentono a questo Sito Web di raggiungere gli scopi descritti. Queste tecnologie permettono al Titolare di raccogliere e salvare informazioni o di utilizzare risorse sul dispositivo dell'Utente durante l'interazione con il sito.</p>
+      </div>
+    </div>
 
-    <h2>Strumenti per l'Esperienza</h2>
-    <p>Strumenti di tracciamento per migliorare l'esperienza utente e abilitare interazioni con contenuti, reti e piattaforme esterne.</p>
-    <ul>
-      <li><strong>Meta Lead Ads (Meta Platforms, Inc.)</strong> — Servizio pubblicitario e raccolta dati. Dati trattati: Dati di utilizzo, email, Strumenti di Tracciamento. Sede: Stati Uniti. Cookie: _fbp (3 mesi), lastExternalReferrer (sessione), lastExternalReferrerTime (sessione).</li>
-    </ul>
+    <div class="policy-section">
+      <div class="policy-section-label">Necessari</div>
+      <div class="policy-section-content">
+        <ul>
+          <li><strong>Google Tag Manager (Google LLC)</strong> — Gestione dei tag. Dati: Dati di utilizzo, Strumenti di Tracciamento. Sede: Stati Uniti.</li>
+        </ul>
+      </div>
+    </div>
 
-    <h2>Strumenti di Misurazione</h2>
-    <p>Strumenti di tracciamento per misurare il traffico e analizzare il comportamento degli utenti.</p>
-    <ul>
-      <li><strong>Google Analytics 4 (Google LLC)</strong> — Servizio di statistiche. Gli indirizzi IP vengono eliminati prima dell'archiviazione. Dati trattati: Dati di utilizzo, numero di Utenti, statistiche delle sessioni, Strumenti di Tracciamento. Sede: Stati Uniti. Cookie: _ga (2 anni), _ga_* (2 anni).</li>
-      <li><strong>Meta Events Manager (Meta Platforms Ireland Limited)</strong> — Servizio di statistiche tramite Meta pixel. Dati trattati: cronologia delle ricerche, Dati di utilizzo, nome, Strumenti di Tracciamento. Sede: Irlanda. Cookie: _fbp (3 mesi), lastExternalReferrer (sessione), lastExternalReferrerTime (sessione).</li>
-    </ul>
+    <div class="policy-section">
+      <div class="policy-section-label">Esperienza</div>
+      <div class="policy-section-content">
+        <ul>
+          <li><strong>Meta Lead Ads (Meta Platforms, Inc.)</strong> — Raccolta dati e pubblicità. Dati: Dati di utilizzo, email, Strumenti di Tracciamento. Sede: Stati Uniti. Cookie: _fbp (3 mesi), lastExternalReferrer (sessione).</li>
+        </ul>
+      </div>
+    </div>
 
-    <h2>Strumenti di Marketing</h2>
-    <p>Strumenti per la pubblicità personalizzata e la misurazione delle performance di marketing.</p>
-    <ul>
-      <li><strong>Meta Audience Network (Meta Platforms, Inc.)</strong> — Servizio pubblicitario che utilizza identificatori di dispositivi mobili o tecnologie simili ai cookie. Gli utenti possono controllare le preferenze tramite le impostazioni pubblicitarie di Facebook. Sede: Stati Uniti. Cookie: lastExternalReferrer (sessione), lastExternalReferrerTime (sessione).</li>
-    </ul>
+    <div class="policy-section">
+      <div class="policy-section-label">Misurazione</div>
+      <div class="policy-section-content">
+        <ul>
+          <li><strong>Google Analytics 4 (Google LLC)</strong> — Statistiche. IP eliminato prima dell'archiviazione. Cookie: _ga (2 anni), _ga_* (2 anni). Sede: Stati Uniti.</li>
+          <li><strong>Meta Events Manager (Meta Platforms Ireland Ltd.)</strong> — Statistiche via pixel. Dati: cronologia ricerche, Dati di utilizzo, nome. Cookie: _fbp (3 mesi). Sede: Irlanda.</li>
+        </ul>
+      </div>
+    </div>
 
-    <h2>Gestione delle Preferenze e del Consenso</h2>
-    <p>Gli utenti possono fornire o revocare il consenso tramite il pannello delle preferenze sulla privacy disponibile su questo sito. Per gli strumenti di terze parti, è possibile gestire le preferenze tramite i link di opt-out, le informative sulla privacy di terzi, o contattando direttamente i titolari.</p>
-    <p><strong>Controllo dei cookie tramite le impostazioni del browser</strong> — Gli utenti possono visualizzare, bloccare o eliminare i cookie. Browser supportati: Google Chrome, Mozilla Firefox, Apple Safari, Microsoft Edge, Brave, Opera.</p>
-    <p><strong>Disattivazione degli annunci basati sugli interessi</strong> — Risorse disponibili: YourOnlineChoices (EU e UK), Network Advertising Initiative (USA), Digital Advertising Alliance (USA).</p>
-    <p>Il blocco degli strumenti di tracciamento potrebbe impedire alcune funzionalità del sito.</p>
+    <div class="policy-section">
+      <div class="policy-section-label">Marketing</div>
+      <div class="policy-section-content">
+        <ul>
+          <li><strong>Meta Audience Network (Meta Platforms, Inc.)</strong> — Pubblicità tramite identificatori di dispositivi. Preferenze gestibili via impostazioni Facebook. Sede: Stati Uniti.</li>
+        </ul>
+      </div>
+    </div>
 
-    <h2>Titolare del Trattamento dei Dati</h2>
-    <p>
-      Face Srls<br>
-      Via Cuccia 11, 90144 Palermo (IT)<br>
-      IT06912760821<br>
-      Email: <a href="mailto:info@face.events">info@face.events</a>
-    </p>
+    <div class="policy-section">
+      <div class="policy-section-label">Gestione consenso</div>
+      <div class="policy-section-content">
+        <p>Gli utenti possono fornire o revocare il consenso tramite il pannello preferenze privacy. Per strumenti di terze parti, gestire le preferenze tramite i relativi link di opt-out.</p>
+        <p><strong>Controllo via browser</strong> — Chrome, Firefox, Safari, Edge, Brave, Opera.</p>
+        <p><strong>Disattivazione annunci basati sugli interessi</strong> — YourOnlineChoices (EU/UK), Network Advertising Initiative (USA), Digital Advertising Alliance (USA).</p>
+      </div>
+    </div>
 
-    <h2>Definizioni</h2>
-    <ul>
-      <li><strong>Dati Personali</strong> — Qualsiasi informazione che identifica direttamente o indirettamente una persona fisica.</li>
-      <li><strong>Dati di Utilizzo</strong> — Informazioni raccolte automaticamente (indirizzi IP, caratteristiche del browser/OS, durata delle visite, sequenze di pagine, ecc.).</li>
-      <li><strong>Utente</strong> — La persona fisica che utilizza questo Sito Web.</li>
-      <li><strong>Titolare del Trattamento</strong> — La persona o entità che determina finalità e mezzi del trattamento dei dati (in questo caso: il proprietario del sito).</li>
-      <li><strong>Cookie</strong> — Piccole porzioni di dati archiviate nel browser dell'utente.</li>
-      <li><strong>Strumento di Tracciamento</strong> — Qualsiasi tecnologia che consente il tracciamento degli utenti (cookie, identificatori univoci, web beacon, script incorporati, e-tag, fingerprinting).</li>
-    </ul>
+    <div class="policy-section">
+      <div class="policy-section-label">Titolare del Trattamento</div>
+      <div class="policy-section-content">
+        <p>
+          Face Srls — Via Cuccia 11, 90144 Palermo (IT)<br>
+          P.IVA IT06912760821<br>
+          <a href="mailto:info@face.events">info@face.events</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="policy-section">
+      <div class="policy-section-label">Definizioni</div>
+      <div class="policy-section-content">
+        <ul>
+          <li><strong>Dati Personali</strong> — Qualsiasi informazione che identifica direttamente o indirettamente una persona fisica.</li>
+          <li><strong>Dati di Utilizzo</strong> — Informazioni raccolte automaticamente (IP, browser/OS, durata visite, sequenze pagine).</li>
+          <li><strong>Cookie</strong> — Piccole porzioni di dati archiviate nel browser dell'utente.</li>
+          <li><strong>Strumento di Tracciamento</strong> — Qualsiasi tecnologia che consente il tracciamento degli utenti.</li>
+        </ul>
+      </div>
+    </div>
+
   </main>
 
   <footer class="footer">
