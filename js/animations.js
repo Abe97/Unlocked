@@ -66,10 +66,11 @@ function initHeroAnimation() {
 
   const tl = gsap.timeline({ delay: 0.2 })
 
-  tl.from('.hero-title-svg', {
+  tl.from('.hero-letter', {
     opacity: 0,
-    duration: 1.2,
-    ease: 'power4.out'
+    duration: 0.8,
+    ease: 'power4.out',
+    stagger: 0.08
   })
   .from('.hero-sub', {
     opacity: 0,
