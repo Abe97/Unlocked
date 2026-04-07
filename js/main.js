@@ -137,4 +137,20 @@
     }
   }, true)
 
+  // ── Cookie banner ─────────────────────────────────────────────────
+  const cookieBanner = document.getElementById('cookieBanner')
+  if (cookieBanner && !localStorage.getItem('cookie_consent')) {
+    setTimeout(() => cookieBanner.classList.remove('hidden'), 1200)
+
+    document.getElementById('cookieAccept')?.addEventListener('click', () => {
+      localStorage.setItem('cookie_consent', 'accepted')
+      cookieBanner.classList.add('hidden')
+    })
+
+    document.getElementById('cookieReject')?.addEventListener('click', () => {
+      localStorage.setItem('cookie_consent', 'rejected')
+      cookieBanner.classList.add('hidden')
+    })
+  }
+
 })()
