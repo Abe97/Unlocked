@@ -66,7 +66,7 @@ function initHeroAnimation() {
 
   const tl = gsap.timeline({ delay: 0.2 })
 
-  tl.from('.hero-title-gif', {
+  tl.from('.hero-title-svg', {
     opacity: 0,
     duration: 1.2,
     ease: 'power4.out'
