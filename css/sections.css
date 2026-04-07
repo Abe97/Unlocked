@@ -1243,7 +1243,7 @@ footer {
   letter-spacing: 0.12em;
   color: var(--cream-28);
   text-decoration: none;
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 
 .footer-madeby a:hover {
