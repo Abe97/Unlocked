@@ -412,7 +412,7 @@ function populateFooter(config, lang) {
   const ui = config.ui[lang]
 
   const orgEl = document.querySelector('.footer-organizer')
-  if (orgEl) orgEl.textContent = ui.footer.organizer
+  if (orgEl) orgEl.innerHTML = ui.footer.organizer
 
   const privEl = document.querySelector('.footer-privacy')
   if (privEl) privEl.textContent = ui.footer.privacy
