@@ -1230,6 +1230,26 @@ footer {
   letter-spacing: 0.06em;
 }
 
+.footer-madeby {
+  text-align: center;
+  padding: 12px 0 0;
+  border-top: 1px solid var(--border);
+  margin-top: 16px;
+}
+
+.footer-madeby a {
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--cream-28);
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+.footer-madeby a:hover {
+  color: var(--cream-50);
+}
+
 .footer-legal {
   display: flex;
   gap: 16px;
