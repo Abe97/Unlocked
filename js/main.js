@@ -145,11 +145,17 @@
     document.getElementById('cookieAccept')?.addEventListener('click', () => {
       localStorage.setItem('cookie_consent', 'accepted')
       cookieBanner.classList.add('hidden')
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', { ad_storage: 'granted', analytics_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' })
+      }
     })
 
     document.getElementById('cookieReject')?.addEventListener('click', () => {
       localStorage.setItem('cookie_consent', 'rejected')
       cookieBanner.classList.add('hidden')
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' })
+      }
     })
   }
 
