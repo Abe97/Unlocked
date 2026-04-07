@@ -68,6 +68,7 @@ function initHeroAnimation() {
 
   tl.from('.hero-letter', {
     opacity: 0,
+    y: 40,
     duration: 0.8,
     ease: 'power4.out',
     stagger: 0.08
