@@ -285,28 +285,16 @@ function populateHistory(config, lang) {
     if (lblEl) lblEl.textContent = label
   })
 
-  // Expand yearEnd entries into one node per year
-  const milestones = []
-  for (const m of h.milestones) {
-    if (m.yearEnd) {
-      for (let y = m.year; y <= m.yearEnd; y++) {
-        milestones.push({ ...m, year: y, yearEnd: undefined, isRepeat: y > m.year })
-      }
-    } else {
-      milestones.push({ ...m, isRepeat: false })
-    }
-  }
-
   // Vertical timeline — alternate left/right
   const milestonesEl = document.querySelector('.storia-milestones')
   if (milestonesEl) {
-    milestonesEl.innerHTML = milestones.map((m, i) => {
-      const sideClass  = i % 2 === 0 ? 'left' : 'right'
-      const repeatClass = m.isRepeat ? 'is-repeat' : ''
-      return `<div class="storia-event ${sideClass} ${repeatClass}" role="listitem">
+    milestonesEl.innerHTML = h.milestones.map((m, i) => {
+      const sideClass = i % 2 === 0 ? 'left' : 'right'
+      return `<div class="storia-event ${sideClass}" role="listitem">
         <div class="storia-event-content">
           <div class="storia-event-year">${m.year}</div>
-          <div class="storia-event-label">${m.label[lang]}</div>
+          <div class="storia-event-headliner">${m.headliner}</div>
+          <div class="storia-event-location">${m.location}</div>
         </div>
         <div class="storia-event-dot-wrap"><div class="storia-event-dot"></div></div>
       </div>`

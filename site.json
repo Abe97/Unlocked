@@ -335,20 +335,18 @@
       "locations": 4
     },
     "milestones": [
-      { "year": 2012, "label": { "it": "Velodromo Paolo Borsellino, Palermo", "en": "Velodromo Paolo Borsellino, Palermo" } },
-      { "year": 2013, "label": { "it": "Sea Club", "en": "Sea Club" } },
-      { "year": 2014, "label": { "it": "Cala Marina", "en": "Cala Marina" } },
-      { "year": 2015, "label": { "it": "Castello a Mare, Palermo", "en": "Castello a Mare, Palermo" } },
-      { "year": 2016, "label": { "it": "Mob Disco Theatre", "en": "Mob Disco Theatre" } },
-      { "year": 2017, "label": { "it": "San Vito Lo Capo", "en": "San Vito Lo Capo" } },
-      { "year": 2018, "label": { "it": "Capo dei Greci, Taormina", "en": "Capo dei Greci, Taormina" } },
-      { "year": 2019, "label": { "it": "Cave di Cusa, Pantelleria – Castelvetrano", "en": "Cave di Cusa, Castelvetrano – Pantelleria" } },
-      { "year": 2020, "label": { "it": "Catania", "en": "Catania" } },
-      { "year": 2021, "label": { "it": "Mob Disco Theatre", "en": "Mob Disco Theatre" } },
-      { "year": 2022, "label": { "it": "Mob Disco Theatre", "en": "Mob Disco Theatre" } },
-      { "year": 2023, "label": { "it": "Parco Archeologico di Selinunte", "en": "Archaeological Park of Selinunte" } },
-      { "year": 2024, "label": { "it": "Cantieri Culturali della Zisa, Palermo", "en": "Cantieri Culturali della Zisa, Palermo" } },
-      { "year": 2025, "label": { "it": "Castellammare del Golfo", "en": "Castellammare del Golfo" } }
+      { "year": 2011, "headliner": "Hardwell",          "location": "Velodromo di Palermo" },
+      { "year": 2012, "headliner": "Kaskade",           "location": "Sea Club, Terrasini" },
+      { "year": 2013, "headliner": "Benny Benassi",     "location": "Velodromo di Palermo" },
+      { "year": 2016, "headliner": "Hardwell",          "location": "Castello a Mare, Porto di Palermo" },
+      { "year": 2016, "headliner": "Solomun",           "location": "Mob Disco Theatre, Palermo" },
+      { "year": 2018, "headliner": "Tale Of Us",        "location": "Mob Disco Theatre, Palermo" },
+      { "year": 2019, "headliner": "Carl Cox",          "location": "Parco Archeologico di Selinunte" },
+      { "year": 2022, "headliner": "Kalkbrenner",       "location": "Parco Archeologico di Selinunte" },
+      { "year": 2022, "headliner": "Marco Carola",      "location": "Mob Disco Theatre, Palermo" },
+      { "year": 2023, "headliner": "Peggy Gou",         "location": "Parco Archeologico di Selinunte" },
+      { "year": 2024, "headliner": "Carl Cox + Pawsa",  "location": "Cantieri Culturali della Zisa, Palermo" },
+      { "year": 2025, "headliner": "Mochakk",           "location": "Porto Nuovo, Castellammare del Golfo" }
     ]
   }
 }

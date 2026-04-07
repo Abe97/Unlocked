@@ -295,14 +295,16 @@ function initHistoryAnimation() {
   function initTimeline() {
     gsap.utils.toArray('.storia-event').forEach(el => {
       const isLeft  = el.classList.contains('left')
-      const dot     = el.querySelector('.storia-event-dot')
-      const year    = el.querySelector('.storia-event-year')
-      const label   = el.querySelector('.storia-event-label')
-      const xDir    = isLeft ? -1 : 1
+      const dot        = el.querySelector('.storia-event-dot')
+      const year       = el.querySelector('.storia-event-year')
+      const headliner  = el.querySelector('.storia-event-headliner')
+      const location   = el.querySelector('.storia-event-location')
+      const xDir       = isLeft ? -1 : 1
 
-      gsap.set(dot,   { scale: 0, transformOrigin: 'center center' })
-      gsap.set(year,  { opacity: 0, x: xDir * 100 })
-      gsap.set(label, { opacity: 0, x: xDir * 50 })
+      gsap.set(dot,       { scale: 0, transformOrigin: 'center center' })
+      gsap.set(year,      { opacity: 0, x: xDir * 100 })
+      gsap.set(headliner, { opacity: 0, x: xDir * 50 })
+      gsap.set(location,  { opacity: 0, x: xDir * 30 })
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -313,9 +315,10 @@ function initHistoryAnimation() {
       })
 
       tl.set(el, { opacity: 1 })
-        .to(dot,   { scale: 1, duration: 0.4, ease: 'back.out(2.5)' })
-        .to(year,  { opacity: 1, x: 0, duration: 0.7, ease: 'power3.out' }, '-=0.15')
-        .to(label, { opacity: 1, x: 0, duration: 0.5, ease: 'power2.out' }, '-=0.4')
+        .to(dot,       { scale: 1, duration: 0.4, ease: 'back.out(2.5)' })
+        .to(year,      { opacity: 1, x: 0, duration: 0.7, ease: 'power3.out' }, '-=0.15')
+        .to(headliner, { opacity: 1, x: 0, duration: 0.5, ease: 'power2.out' }, '-=0.4')
+        .to(location,  { opacity: 1, x: 0, duration: 0.4, ease: 'power2.out' }, '-=0.3')
     })
   }
 
