@@ -244,8 +244,7 @@
       "artistsTba": true,
       "ticketUrl": "",
       "soldOut": false,
-      "tba": true,
-      "image": "asset/img/19.09%20AURA%20600x600.jpg"
+      "tba": true
     },
     {
       "id": "aura-settembre-2026",
@@ -264,7 +263,8 @@
       "artistsTba": true,
       "ticketUrl": "",
       "soldOut": false,
-      "tba": true
+      "tba": true,
+      "image": "asset/img/19.09%20AURA%20600x600.jpg"
     }
   ],
 
