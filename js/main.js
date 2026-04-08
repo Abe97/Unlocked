@@ -62,6 +62,9 @@
       const endpoint = config.meta.formEndpoint
 
       if (endpoint) {
+        if (config.meta.formAccessKey) {
+          data.append('access_key', config.meta.formAccessKey)
+        }
         fetch(endpoint, { method: 'POST', body: data })
           .then(() => showFormSuccess())
           .catch(() => showFormSuccess()) // Graceful fallback
@@ -137,26 +140,6 @@
     }
   }, true)
 
-  // ── Cookie banner ─────────────────────────────────────────────────
-  const cookieBanner = document.getElementById('cookieBanner')
-  if (cookieBanner && !localStorage.getItem('cookie_consent')) {
-    setTimeout(() => cookieBanner.classList.remove('hidden'), 1200)
-
-    document.getElementById('cookieAccept')?.addEventListener('click', () => {
-      localStorage.setItem('cookie_consent', 'accepted')
-      cookieBanner.classList.add('hidden')
-      if (typeof gtag === 'function') {
-        gtag('consent', 'update', { ad_storage: 'granted', analytics_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' })
-      }
-    })
-
-    document.getElementById('cookieReject')?.addEventListener('click', () => {
-      localStorage.setItem('cookie_consent', 'rejected')
-      cookieBanner.classList.add('hidden')
-      if (typeof gtag === 'function') {
-        gtag('consent', 'update', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' })
-      }
-    })
-  }
+  // Cookie consent is handled by Iubenda via GTM
 
 })()

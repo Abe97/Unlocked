@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "Static HTTP Server",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "-l", "8080", "."],
+      "runtimeExecutable": "/opt/homebrew/bin/node",
+      "runtimeArgs": [".claude/serve.js"],
       "port": 8080
     }
   ]

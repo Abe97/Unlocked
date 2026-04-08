@@ -15,7 +15,8 @@
       "instagramUmf": "https://instagram.com/unlockedmusicfestival",
       "instagramSolo": "https://instagram.com/unlocked"
     },
-    "formEndpoint": ""
+    "formEndpoint": "https://api.web3forms.com/submit",
+    "formAccessKey": "364d7035-c0f9-4461-adba-26321de8f7c4"
   },
 
   "ui": {
