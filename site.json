@@ -228,14 +228,14 @@
       "image": "asset/img/14.08%20AURA%20600x600.jpg"
     },
     {
-      "id": "aura-alcamo-2026",
-      "brand": "AURA",
-      "brandIntensity": "full",
+      "id": "solo-agosto-2026",
+      "brand": "SOLO",
+      "brandIntensity": "muted",
       "date": {
-        "it": "21 – 22 Agosto",
-        "en": "August 21–22"
+        "it": "22 Agosto",
+        "en": "August 22"
       },
-      "dateISO": "2026-08-21",
+      "dateISO": "2026-08-22",
       "location": {
         "it": "TBA",
         "en": "TBA"
@@ -244,7 +244,8 @@
       "artistsTba": true,
       "ticketUrl": "",
       "soldOut": false,
-      "tba": true
+      "tba": true,
+      "image": "asset/img/22.08%20SOLO%20600x600%202.jpg"
     },
     {
       "id": "aura-settembre-2026",
