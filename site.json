@@ -246,6 +246,25 @@
       "soldOut": false,
       "tba": true,
       "image": "asset/img/19.09%20AURA%20600x600.jpg"
+    },
+    {
+      "id": "aura-settembre-2026",
+      "brand": "AURA",
+      "brandIntensity": "full",
+      "date": {
+        "it": "19 Settembre",
+        "en": "September 19"
+      },
+      "dateISO": "2026-09-19",
+      "location": {
+        "it": "TBA",
+        "en": "TBA"
+      },
+      "artists": [],
+      "artistsTba": true,
+      "ticketUrl": "",
+      "soldOut": false,
+      "tba": true
     }
   ],
 
