@@ -176,7 +176,7 @@ function populateEvents(config, lang) {
   const titleEl = document.querySelector('#eventi .section-title')
   if (titleEl) titleEl.textContent = ui.sections.events
 
-  list.innerHTML = config.events.map(event => {
+  list.innerHTML = config.events.filter(e => !e.past).map(event => {
     const style = getBrandStyle(event.brandIntensity)
     const brandClass = `brand-${event.brandIntensity}`
     const tbaClass = event.tba ? 'is-tba' : ''
@@ -219,6 +219,55 @@ function populateEvents(config, lang) {
         <div class="card-action">
           ${actionHtml}
         </div>
+      </div>
+      <div class="card-poster">
+        <div class="card-poster-inner">
+          ${event.image ? `<img src="${event.image}" alt="${eventName}" loading="lazy">` : ''}
+        </div>
+      </div>
+    </article>`
+  }).join('')
+}
+
+// ── Past Events ──────────────────────────────────────────────────────
+function populatePastEvents(config, lang) {
+  const ui = config.ui[lang]
+  const section = document.getElementById('eventi-passati')
+  const list = document.querySelector('.past-events-list')
+  if (!list) return
+
+  const titleEl = document.querySelector('#eventi-passati .section-title')
+  if (titleEl) titleEl.textContent = ui.pastEvents.title
+
+  const pastEvents = config.events.filter(e => e.past)
+  if (pastEvents.length === 0) {
+    if (section) section.style.display = 'none'
+    return
+  }
+  if (section) section.style.display = ''
+
+  list.innerHTML = pastEvents.map(event => {
+    const style = getBrandStyle(event.brandIntensity)
+    const brandClass = `brand-${event.brandIntensity}`
+    const date = event.date[lang]
+    const location = event.location[lang]
+    const eventName = event.eventName || event.brand
+
+    const artistsHtml = event.artists.length > 0
+      ? event.artists.map(a => `<span class="card-artist">${a}</span>`).join('')
+      : ''
+
+    return `
+    <article class="event-card ${brandClass} is-past" data-event-id="${event.id}">
+      <div class="card-info">
+        <div class="card-meta">
+          <span class="card-mode" style="color:${style.color}">${eventName}</span>
+          <div class="card-date-day" style="color:${style.color}">${date}</div>
+        </div>
+        <div class="card-artists">
+          ${artistsHtml}
+        </div>
+        <div class="card-location">${location}</div>
       </div>
       <div class="card-poster">
         <div class="card-poster-inner">
@@ -439,6 +488,7 @@ function populateDOM(config, lang) {
   populateArtistsIntro(config, lang)
   populateMarquee(config)
   populateEvents(config, lang)
+  populatePastEvents(config, lang)
   populateBrands(config, lang)
   populateHistory(config, lang)
   populateSponsors(config, lang)
@@ -453,6 +503,7 @@ function updateTextContent(config, lang) {
   populateHero(config, lang)
   populateArtistsIntro(config, lang)
   populateEvents(config, lang)
+  populatePastEvents(config, lang)
   populateBrands(config, lang)
   populateHistory(config, lang)
   populateSponsors(config, lang)

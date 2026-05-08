@@ -49,6 +49,9 @@
         "tbaLabel": "TBA",
         "confirmedArtists": "Artisti confermati"
       },
+      "pastEvents": {
+        "title": "Eventi Passati"
+      },
       "countdown": {
         "days": "giorni",
         "hours": "ore",
@@ -103,6 +106,9 @@
         "soldOutLabel": "Sold Out",
         "tbaLabel": "TBA",
         "confirmedArtists": "Confirmed artists"
+      },
+      "pastEvents": {
+        "title": "Past Events"
       },
       "countdown": {
         "days": "days",
@@ -159,11 +165,12 @@
         "it": "Parco Archeologico di Segesta",
         "en": "Archaeological Park of Segesta"
       },
-      "artists": ["Joseph Capriati"],
-      "artistsTba": true,
-      "ticketUrl": "https://www.ticketsms.it/collection/Aura-Festival",
+      "artists": ["Francesco Del Garda", "Traumer", "Josh Baker"],
+      "artistsTba": false,
+      "ticketUrl": "",
       "soldOut": false,
       "tba": false,
+      "past": true,
       "image": "asset/img/01-02.05%20AURA%20600x600.jpg"
     },
     {
@@ -176,14 +183,14 @@
       },
       "dateISO": "2026-06-01",
       "location": {
-        "it": "Location da annunciare",
-        "en": "Location TBA"
+        "it": "Palazzina Cinese – Palermo, Sicilia",
+        "en": "Palazzina Cinese – Palermo, Sicily"
       },
-      "artists": [],
-      "artistsTba": true,
-      "ticketUrl": "",
+      "artists": ["Richie Hawtin", "Horacio Cruz", "Sensazione Stupenda"],
+      "artistsTba": false,
+      "ticketUrl": "https://www.ticketsms.it/event/Richie-Hawtin-Palermo-Palazzina-Cinese-01-06-2026",
       "soldOut": false,
-      "tba": true,
+      "tba": false,
       "image": "asset/img/01.06%20AURA%20600x600.jpg"
     },
     {
