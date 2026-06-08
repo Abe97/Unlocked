@@ -39,6 +39,7 @@
       "sections": {
         "events": "Eventi 2026",
         "brands": "Due brand. Un'unica visione.",
+        "partners": "I nostri Partner",
         "artistsIntro": "Alcuni degli artisti internazionali che abbiamo ospitato",
         "history": "Key milestones",
         "historySubtitle": "Dal Parco Archeologico di Selinunte al Porto Nuovo di Castellammare del Golfo, Unlocked porta la musica elettronica internazionale nei luoghi più suggestivi della Sicilia.",
@@ -105,6 +106,7 @@
       "sections": {
         "events": "2026 Events",
         "brands": "Two brands. One vision.",
+        "partners": "Our Partners",
         "artistsIntro": "Some of the international artists we've hosted",
         "history": "Key milestones",
         "historySubtitle": "From the Archaeological Park of Selinunte to Porto Nuovo in Castellammare del Golfo, Unlocked brings international electronic music to Sicily's most evocative places.",
@@ -292,7 +294,7 @@
         "it": "Il festival open-air internazionale di Unlocked. Dal Porto Nuovo di Castellammare del Golfo, una produzione strutturata che porta la scena elettronica mondiale in Sicilia.",
         "en": "Unlocked's international open-air festival. From Porto Nuovo in Castellammare del Golfo, a structured production bringing the global electronic scene to Sicily."
       }
-    },
+    }
   },
   "sponsorPackages": [
     {
@@ -384,6 +386,23 @@
           "Category exclusivity"
         ]
       }
+    }
+  ],
+  "partners": [
+    {
+      "name": "TicketSMS",
+      "logo": null,
+      "url": "https://www.ticketsms.it"
+    },
+    {
+      "name": "m2o",
+      "logo": "asset/img/radio m2o (1).svg",
+      "url": "https://www.m2o.it"
+    },
+    {
+      "name": "Assomusica",
+      "logo": "asset/img/Logo Associato Assomusica 2026_White (1).png",
+      "url": "https://www.assomusica.it"
     }
   ],
   "history": {

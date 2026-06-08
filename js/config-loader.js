@@ -392,6 +392,25 @@ function populateContact(config, lang) {
   }
 }
 
+// ── Partners ──────────────────────────────────────────────────────────
+function populatePartners(config, lang) {
+  const grid = document.querySelector('.partners-grid')
+  if (!grid) return
+
+  const titleEl = document.querySelector('#partner .section-title')
+  if (titleEl) titleEl.textContent = config.ui[lang].sections.partners
+
+  if (!config.partners || !config.partners.length) return
+
+  grid.innerHTML = config.partners.map(p => {
+    const inner = p.logo
+      ? `<img class="partner-logo" src="${p.logo}" alt="${p.name}" loading="lazy">`
+      // TODO: aggiungere logo TicketSMS in asset/img e impostare il campo logo nel config
+      : `<span class="partner-name-text">${p.name}</span>`
+    return `<a class="partner-item" href="${p.url}" target="_blank" rel="noopener noreferrer" aria-label="${p.name}">${inner}</a>`
+  }).join('')
+}
+
 // ── Footer ────────────────────────────────────────────────────────────
 function populateFooter(config, lang) {
   const ui = config.ui[lang]
@@ -440,6 +459,7 @@ function populateDOM(config, lang) {
   populateHistory(config, lang)
   populateSponsors(config, lang)
   populateContact(config, lang)
+  populatePartners(config, lang)
   populateFooter(config, lang)
   populateStickyBar(config, lang)
 }
@@ -454,6 +474,7 @@ function updateTextContent(config, lang) {
   populateHistory(config, lang)
   populateSponsors(config, lang)
   populateContact(config, lang)
+  populatePartners(config, lang)
   populateFooter(config, lang)
   populateStickyBar(config, lang)
 }
