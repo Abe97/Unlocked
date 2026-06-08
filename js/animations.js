@@ -479,15 +479,13 @@ function initImageInterludes() {
 }
 
 // ── Photo Gallery Slider ──────────────────────────────────────────────
-function initImageSlider() {
-  const section = document.querySelector('.img-slider-section')
-  if (!section) return
-
-  const slides    = gsap.utils.toArray('.img-slide')
+function initSliderInstance(section) {
+  const slides    = gsap.utils.toArray(section.querySelectorAll('.img-slide'))
   const dotsCont  = section.querySelector('.slider-dots')
   const counterEl = section.querySelector('.slider-current')
   const totalEl   = section.querySelector('.slider-total')
   const total     = slides.length
+  if (total === 0) return
   let current  = 0
   let animating = false
 
@@ -544,7 +542,6 @@ function initImageSlider() {
     const outInner = outSlide.querySelector('.img-slide-inner')
     const inInner  = inSlide.querySelector('.img-slide-inner')
 
-    // Ensure incoming is fully visible and reset any drag offset
     gsap.set(outInner, { x: 0 })
     gsap.set(inSlide,  { opacity: 1, zIndex: 2 })
     gsap.set(outSlide, { zIndex: 1 })
@@ -552,7 +549,6 @@ function initImageSlider() {
 
     const tl = gsap.timeline({
       onComplete: () => {
-        // Restore outgoing slide so it can be used as incoming in future
         gsap.set(outSlide, { opacity: 1, zIndex: 0 })
         gsap.set(outInner, { xPercent: 105, skewX: 0, x: 0 })
         current = next
@@ -615,6 +611,10 @@ function initImageSlider() {
   })
 
   updateUI(0)
+}
+
+function initImageSlider() {
+  document.querySelectorAll('.img-slider-section').forEach(initSliderInstance)
 }
 
 // ── Mobile sticky bar hide in events section ──────────────────────────

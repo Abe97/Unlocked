@@ -482,6 +482,38 @@
   }
 }
 
+/* ── Past Events section ─────────────────────────────────────────── */
+#eventi-passati {
+  padding: 96px 0;
+}
+
+.past-events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.event-card.is-past {
+  opacity: 0.6;
+}
+
+.event-card.is-past .card-poster-inner img {
+  filter: grayscale(100%);
+}
+
+.event-card.is-past:hover {
+  opacity: 0.85;
+}
+
+.event-card.is-past:hover .card-poster-inner img {
+  filter: grayscale(40%);
+  transform: scale(1.04);
+}
+
 /* ── Brands section ──────────────────────────────────────────────── */
 #brand {
   padding: 96px 0;
