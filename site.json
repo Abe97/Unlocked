@@ -227,6 +227,7 @@
       "ticketUrl": "https://www.ticketsms.it/event/Richie-Hawtin-Palermo-Palazzina-Cinese-01-06-2026",
       "soldOut": false,
       "tba": false,
+      "past": true,
       "image": "asset/img/01.06%20AURA%20600x600.jpg"
     },
     {
