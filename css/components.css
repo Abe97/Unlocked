@@ -257,12 +257,6 @@
   .nav-links {
     display: none;
   }
-}
-
-@media (max-width: 767px) {
-  .nav {
-    padding: 0 24px;
-  }
 
   .nav-hamburger {
     display: flex;
@@ -270,6 +264,12 @@
 
   .nav-cta {
     display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav {
+    padding: 0 24px;
   }
 }
 
