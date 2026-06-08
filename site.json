@@ -12,18 +12,23 @@
     },
     "social": {
       "instagramAura": "https://instagram.com/aurafestival.it",
-      "instagramUmf": "https://instagram.com/unlockedmusicfestival",
-      "instagramSolo": "https://instagram.com/unlocked"
+      "instagramUmf": "https://instagram.com/unlockedmusicfestival"
     },
     "formEndpoint": "https://api.web3forms.com/submit",
     "formAccessKey": "364d7035-c0f9-4461-adba-26321de8f7c4"
   },
-
   "ui": {
     "it": {
       "nav": {
         "cta": "Biglietti",
-        "links": ["AURA", "UMF", "SOLO", "Eventi", "Sponsor", "Contatti"]
+        "links": [
+          "AURA",
+          "UMF",
+          "SOLO",
+          "Eventi",
+          "Sponsor",
+          "Contatti"
+        ]
       },
       "hero": {
         "tagline": "Da 15 anni, la musica elettronica internazionale in Sicilia.",
@@ -36,7 +41,7 @@
         "events": "Eventi 2026",
         "brands": "Tre brand. Un'unica visione.",
         "artistsIntro": "Alcuni degli artisti internazionali che abbiamo ospitato",
-        "history": "15 anni di storia",
+        "history": "Key milestones",
         "historySubtitle": "Dal Parco Archeologico di Selinunte al Porto Nuovo di Castellammare del Golfo, Unlocked porta la musica elettronica internazionale nei luoghi più suggestivi della Sicilia.",
         "sponsor": "Diventa Partner",
         "sponsorSubtitle": "Unisciti a noi e porta il tuo brand al cuore della scena elettronica siciliana.",
@@ -59,7 +64,12 @@
         "name": "Nome",
         "email": "Email",
         "type": "Tipo di richiesta",
-        "typeOptions": ["Info evento", "Sponsorship", "Press", "Altro"],
+        "typeOptions": [
+          "Info evento",
+          "Sponsorship",
+          "Press",
+          "Altro"
+        ],
         "message": "Messaggio",
         "send": "Invia",
         "namePlaceholder": "Il tuo nome",
@@ -78,7 +88,14 @@
     "en": {
       "nav": {
         "cta": "Tickets",
-        "links": ["AURA", "UMF", "SOLO", "Events", "Sponsors", "Contact"]
+        "links": [
+          "AURA",
+          "UMF",
+          "SOLO",
+          "Events",
+          "Sponsors",
+          "Contact"
+        ]
       },
       "hero": {
         "tagline": "15 years of international electronic music in Sicily.",
@@ -91,7 +108,7 @@
         "events": "2026 Events",
         "brands": "Three brands. One vision.",
         "artistsIntro": "Some of the international artists we've hosted",
-        "history": "15 years of history",
+        "history": "Key milestones",
         "historySubtitle": "From the Archaeological Park of Selinunte to Porto Nuovo in Castellammare del Golfo, Unlocked brings international electronic music to Sicily's most evocative places.",
         "sponsor": "Become a Partner",
         "sponsorSubtitle": "Join us and bring your brand to the heart of the Sicilian electronic scene.",
@@ -114,7 +131,12 @@
         "name": "Name",
         "email": "Email",
         "type": "Request type",
-        "typeOptions": ["Event info", "Sponsorship", "Press", "Other"],
+        "typeOptions": [
+          "Event info",
+          "Sponsorship",
+          "Press",
+          "Other"
+        ],
         "message": "Message",
         "send": "Send",
         "namePlaceholder": "Your name",
@@ -131,61 +153,35 @@
       }
     }
   },
-
   "artists": {
     "marquee": [
-      "Carl Cox", "Pawsa", "Mochakk", "Peggy Gou",
-      "Paul Kalkbrenner", "Seth Troxler", "Marco Carola",
-      "Richie Hawtin", "Wade", "Ilario Alicante", "Fisher",
-      "Blackchild", "Patrick Topping", "Hardwell",
-      "Archie Hamilton", "Andrea Oliva", "Gioli & Assia",
-      "Luca Agnelli", "Basswell", "Frank Storm",
-      "Enrico Sangiuliano", "Sven Väth", "Silvie Loto",
+      "Carl Cox",
+      "Pawsa",
+      "Mochakk",
+      "Peggy Gou",
+      "Paul Kalkbrenner",
+      "Seth Troxler",
+      "Marco Carola",
+      "Richie Hawtin",
+      "Wade",
+      "Ilario Alicante",
+      "Fisher",
+      "Blackchild",
+      "Patrick Topping",
+      "Hardwell",
+      "Archie Hamilton",
+      "Andrea Oliva",
+      "Gioli & Assia",
+      "Luca Agnelli",
+      "Basswell",
+      "Frank Storm",
+      "Enrico Sangiuliano",
+      "Sven Väth",
+      "Silvie Loto",
       "Marco Tropeano"
     ]
   },
-
   "events": [
-    {
-      "id": "aura-segesta-2026",
-      "brand": "AURA",
-      "brandIntensity": "full",
-      "date": {
-        "it": "1 – 2 Maggio",
-        "en": "May 1–2"
-      },
-      "dateISO": "2026-05-01",
-      "location": {
-        "it": "Parco Archeologico di Segesta",
-        "en": "Archaeological Park of Segesta"
-      },
-      "artists": ["Joseph Capriati"],
-      "artistsTba": true,
-      "ticketUrl": "https://www.ticketsms.it/collection/Aura-Festival",
-      "soldOut": false,
-      "tba": false,
-      "image": "asset/img/01-02.05%20AURA%20600x600.jpg"
-    },
-    {
-      "id": "aura-giugno-2026",
-      "brand": "AURA",
-      "brandIntensity": "full",
-      "date": {
-        "it": "1 Giugno",
-        "en": "June 1"
-      },
-      "dateISO": "2026-06-01",
-      "location": {
-        "it": "Location da annunciare",
-        "en": "Location TBA"
-      },
-      "artists": [],
-      "artistsTba": true,
-      "ticketUrl": "",
-      "soldOut": false,
-      "tba": true,
-      "image": "asset/img/01.06%20AURA%20600x600.jpg"
-    },
     {
       "id": "umf-castellammare-2026",
       "brand": "UMF",
@@ -200,7 +196,11 @@
         "it": "Porto Nuovo, Castellammare del Golfo",
         "en": "Porto Nuovo, Castellammare del Golfo"
       },
-      "artists": ["Marco Carola", "Ilario Alicante", "Frank Storm"],
+      "artists": [
+        "Marco Carola",
+        "Ilario Alicante",
+        "Frank Storm"
+      ],
       "artistsTba": false,
       "ticketUrl": "https://www.ticketsms.it/event/unlocked-music-festival-day-1-2026",
       "soldOut": false,
@@ -268,7 +268,6 @@
       "image": "asset/img/19.09%20AURA%20600x600.jpg"
     }
   ],
-
   "brands": {
     "aura": {
       "name": "AURA",
@@ -308,46 +307,98 @@
       }
     }
   },
-
   "sponsorPackages": [
     {
       "id": "official",
-      "name": { "it": "Official Partner", "en": "Official Partner" },
+      "name": {
+        "it": "Official Partner",
+        "en": "Official Partner"
+      },
       "price": "€ 2.500 + IVA",
       "benefits": {
-        "it": ["Logo su materiali ufficiali", "1 post social dedicato", "10 biglietti hospitality", "Logo su sito e totem ingresso"],
-        "en": ["Logo on official materials", "1 dedicated social post", "10 hospitality tickets", "Logo on website and entrance totems"]
+        "it": [
+          "Logo su materiali ufficiali",
+          "1 post social dedicato",
+          "10 biglietti hospitality",
+          "Logo su sito e totem ingresso"
+        ],
+        "en": [
+          "Logo on official materials",
+          "1 dedicated social post",
+          "10 hospitality tickets",
+          "Logo on website and entrance totems"
+        ]
       }
     },
     {
       "id": "premium",
-      "name": { "it": "Premium Partner", "en": "Premium Partner" },
+      "name": {
+        "it": "Premium Partner",
+        "en": "Premium Partner"
+      },
       "price": "€ 5.000 + IVA",
       "benefits": {
-        "it": ["Tutto il pacchetto Official +", "5 post social dedicati", "Spazio espositivo brandizzato", "20 biglietti hospitality"],
-        "en": ["Everything in Official +", "5 dedicated social posts", "Branded exhibition space", "20 hospitality tickets"]
+        "it": [
+          "Tutto il pacchetto Official +",
+          "5 post social dedicati",
+          "Spazio espositivo brandizzato",
+          "20 biglietti hospitality"
+        ],
+        "en": [
+          "Everything in Official +",
+          "5 dedicated social posts",
+          "Branded exhibition space",
+          "20 hospitality tickets"
+        ]
       }
     },
     {
       "id": "gold",
-      "name": { "it": "Gold Partner", "en": "Gold Partner" },
+      "name": {
+        "it": "Gold Partner",
+        "en": "Gold Partner"
+      },
       "price": "€ 10.000 + IVA",
       "benefits": {
-        "it": ["Tutto il pacchetto Premium +", "Produzione contenuti video", "35 biglietti VIP", "Naming area specifica"],
-        "en": ["Everything in Premium +", "Video content production", "35 VIP tickets", "Specific area naming"]
+        "it": [
+          "Tutto il pacchetto Premium +",
+          "Produzione contenuti video",
+          "35 biglietti VIP",
+          "Naming area specifica"
+        ],
+        "en": [
+          "Everything in Premium +",
+          "Video content production",
+          "35 VIP tickets",
+          "Specific area naming"
+        ]
       }
     },
     {
       "id": "main",
-      "name": { "it": "Main Sponsor", "en": "Main Sponsor" },
+      "name": {
+        "it": "Main Sponsor",
+        "en": "Main Sponsor"
+      },
       "price": "€ 15.000 + IVA",
       "benefits": {
-        "it": ["Tutto il pacchetto Gold +", "Logo in apertura ogni concerto", "Campagna social co-branded", "Accesso backstage", "Esclusività merceologica"],
-        "en": ["Everything in Gold +", "Logo at opening of each concert", "Co-branded social campaign", "Backstage access", "Category exclusivity"]
+        "it": [
+          "Tutto il pacchetto Gold +",
+          "Logo in apertura ogni concerto",
+          "Campagna social co-branded",
+          "Accesso backstage",
+          "Esclusività merceologica"
+        ],
+        "en": [
+          "Everything in Gold +",
+          "Logo at opening of each concert",
+          "Co-branded social campaign",
+          "Backstage access",
+          "Category exclusivity"
+        ]
       }
     }
   ],
-
   "history": {
     "stats": {
       "years": 15,
@@ -356,18 +407,76 @@
       "locations": 4
     },
     "milestones": [
-      { "year": 2011, "headliner": "Hardwell",          "location": "Velodromo di Palermo" },
-      { "year": 2012, "headliner": "Kaskade",           "location": "Sea Club, Terrasini" },
-      { "year": 2013, "headliner": "Benny Benassi",     "location": "Velodromo di Palermo" },
-      { "year": 2016, "headliner": "Hardwell",          "location": "Castello a Mare, Porto di Palermo" },
-      { "year": 2016, "headliner": "Solomun",           "location": "Mob Disco Theatre, Palermo" },
-      { "year": 2018, "headliner": "Tale Of Us",        "location": "Mob Disco Theatre, Palermo" },
-      { "year": 2019, "headliner": "Carl Cox",          "location": "Parco Archeologico di Selinunte" },
-      { "year": 2022, "headliner": "Kalkbrenner",       "location": "Parco Archeologico di Selinunte" },
-      { "year": 2022, "headliner": "Marco Carola",      "location": "Mob Disco Theatre, Palermo" },
-      { "year": 2023, "headliner": "Peggy Gou",         "location": "Parco Archeologico di Selinunte" },
-      { "year": 2024, "headliner": "Carl Cox + Pawsa",  "location": "Cantieri Culturali della Zisa, Palermo" },
-      { "year": 2025, "headliner": "Mochakk",           "location": "Porto Nuovo, Castellammare del Golfo" }
+      {
+        "year": 2011,
+        "headliner": "Hardwell",
+        "location": "Velodromo di Palermo"
+      },
+      {
+        "year": 2012,
+        "headliner": "Kaskade",
+        "location": "Sea Club, Terrasini"
+      },
+      {
+        "year": 2013,
+        "headliner": "Benny Benassi",
+        "location": "Velodromo di Palermo"
+      },
+      {
+        "year": 2016,
+        "headliner": "Hardwell",
+        "location": "Castello a Mare, Porto di Palermo"
+      },
+      {
+        "year": 2016,
+        "headliner": "Solomun",
+        "location": "Mob Disco Theatre, Palermo"
+      },
+      {
+        "year": 2018,
+        "headliner": "Tale Of Us",
+        "location": "Mob Disco Theatre, Palermo"
+      },
+      {
+        "year": 2019,
+        "headliner": "Carl Cox",
+        "location": "Parco Archeologico di Selinunte"
+      },
+      {
+        "year": 2022,
+        "headliner": "Kalkbrenner",
+        "location": "Parco Archeologico di Selinunte"
+      },
+      {
+        "year": 2022,
+        "headliner": "Marco Carola",
+        "location": "Mob Disco Theatre, Palermo"
+      },
+      {
+        "year": 2023,
+        "headliner": "Peggy Gou",
+        "location": "Parco Archeologico di Selinunte"
+      },
+      {
+        "year": 2024,
+        "headliner": "Carl Cox + Pawsa",
+        "location": "Cantieri Culturali della Zisa, Palermo"
+      },
+      {
+        "year": 2025,
+        "headliner": "Mochakk",
+        "location": "Porto Nuovo, Castellammare del Golfo"
+      },
+      {
+        "year": 2026,
+        "headliner": "Aura Festival a Segesta",
+        "location": "1–2 Maggio · Parco Archeologico di Segesta"
+      },
+      {
+        "year": 2026,
+        "headliner": "Aura in the City — Richie Hawtin",
+        "location": "1 Giugno"
+      }
     ]
   }
 }
