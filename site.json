@@ -24,7 +24,6 @@
         "links": [
           "AURA",
           "UMF",
-          "SOLO",
           "Eventi",
           "Sponsor",
           "Contatti"
@@ -39,7 +38,7 @@
       },
       "sections": {
         "events": "Eventi 2026",
-        "brands": "Tre brand. Un'unica visione.",
+        "brands": "Due brand. Un'unica visione.",
         "artistsIntro": "Alcuni degli artisti internazionali che abbiamo ospitato",
         "history": "Key milestones",
         "historySubtitle": "Dal Parco Archeologico di Selinunte al Porto Nuovo di Castellammare del Golfo, Unlocked porta la musica elettronica internazionale nei luoghi più suggestivi della Sicilia.",
@@ -91,7 +90,6 @@
         "links": [
           "AURA",
           "UMF",
-          "SOLO",
           "Events",
           "Sponsors",
           "Contact"
@@ -106,7 +104,7 @@
       },
       "sections": {
         "events": "2026 Events",
-        "brands": "Three brands. One vision.",
+        "brands": "Two brands. One vision.",
         "artistsIntro": "Some of the international artists we've hosted",
         "history": "Key milestones",
         "historySubtitle": "From the Archaeological Park of Selinunte to Porto Nuovo in Castellammare del Golfo, Unlocked brings international electronic music to Sicily's most evocative places.",
@@ -295,18 +293,6 @@
         "en": "Unlocked's international open-air festival. From Porto Nuovo in Castellammare del Golfo, a structured production bringing the global electronic scene to Sicily."
       }
     },
-    "solo": {
-      "name": "SOLO",
-      "brandIntensity": "muted",
-      "tagline": {
-        "it": "Monochromatic Nature",
-        "en": "Monochromatic Nature"
-      },
-      "description": {
-        "it": "Un format che mette l'artista al centro, non come performer, ma come presenza. Non come nome in una line-up, ma come visione che attraversa uno spazio. L'artista non è uno dei tanti. È l'unico.",
-        "en": "A format that puts the artist at the center, not as a performer, but as a presence. Not as a name in a lineup, but as a vision that crosses a space. The artist is not one of many. They are the only one."
-      }
-    }
   },
   "sponsorPackages": [
     {

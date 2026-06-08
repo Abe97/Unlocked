@@ -489,7 +489,7 @@
 
 .brand-panels {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
@@ -569,15 +569,6 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  .brand-panels {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .brand-panel:last-child {
-    grid-column: 1 / -1;
-  }
-}
 
 /* ── History section ─────────────────────────────────────────────── */
 #storia {

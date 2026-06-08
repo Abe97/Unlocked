@@ -12,8 +12,7 @@ const intensityMap = {
 
 const brandLogoMap = {
   'AURA': 'asset/img/aura.svg',
-  'UMF':  'asset/img/UMF.svg',
-  'SOLO': 'asset/img/solo.svg'
+  'UMF':  'asset/img/UMF.svg'
 }
 
 function getBrandLogo(brand) {
@@ -240,8 +239,7 @@ function populateBrands(config, lang) {
 
   const brands = [
     { key: 'aura', data: config.brands.aura },
-    { key: 'umf',  data: config.brands.umf  },
-    { key: 'solo', data: config.brands.solo  }
+    { key: 'umf',  data: config.brands.umf  }
   ]
 
   panelsEl.innerHTML = brands.map(({ key, data }) => {
@@ -370,8 +368,7 @@ function populateContact(config, lang) {
   // Social links
   const socials = [
     { selector: '.social-link-aura', href: config.meta.social.instagramAura, label: 'AURA' },
-    { selector: '.social-link-umf',  href: config.meta.social.instagramUmf,  label: 'UMF' },
-    { selector: '.social-link-solo', href: config.meta.social.instagramSolo, label: 'SOLO' }
+    { selector: '.social-link-umf',  href: config.meta.social.instagramUmf,  label: 'UMF' }
   ]
   socials.forEach(({ selector, href, label }) => {
     const el = document.querySelector(selector)

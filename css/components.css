@@ -373,16 +373,6 @@
   background: var(--cream-50);
 }
 
-.tag-solo {
-  background: var(--cream-06);
-  color: var(--cream-28);
-  border: 1px solid var(--border);
-}
-
-.tag-solo .tag-dot {
-  background: var(--cream-28);
-}
-
 /* ── Badges ──────────────────────────────────────────────────────── */
 .badge {
   display: inline-flex;
