@@ -290,9 +290,9 @@
         "it": "Porto Nuovo, Castellammare del Golfo",
         "en": "Porto Nuovo, Castellammare del Golfo"
       },
-      "artists": ["Albertino", "Shorty"],
+      "artists": ["Fargetta", "Albertino", "Shorty"],
       "artistsTba": false,
-      "ticketUrl": "https://www.ticketsms.it/event/M2o-Night-Free-Entry-Castellammare-Del-Golfo-Porto-Nuovo-26-07-2026",
+      "ticketUrl": "https://www.ticketsms.it/event/M2o-Night-Free-Entry-Castellamare-Del-Golfo-Porto-Nuovo-26-07-2026",
       "ctaLabel": {
         "it": "Registrazione gratuita",
         "en": "Free registration"
@@ -319,6 +319,7 @@
       "ticketUrl": "https://www.ticketsms.it/event/Aura-Presents-Joseph-Capriati-And-Patrick-Topping-Gibellina-Sistema-Delle-Piazze-14-08-2026",
       "soldOut": false,
       "tba": false,
+      "hidden": true,
       "image": "asset/img/14.08%20AURA%20600x600%20con%20ospiti.jpg"
     },
     {

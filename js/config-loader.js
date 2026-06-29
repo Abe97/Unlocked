@@ -43,7 +43,7 @@ function populateHero(config, lang) {
   // Next event block — find closest upcoming event
   const now = new Date()
   const upcoming = config.events
-    .filter(e => new Date(e.dateISO) >= now)
+    .filter(e => !e.hidden && new Date(e.dateISO) >= now)
     .sort((a, b) => new Date(a.dateISO) - new Date(b.dateISO))[0]
 
   const eventBlock = document.querySelector('.hero-event-block')
@@ -175,7 +175,7 @@ function populateEvents(config, lang) {
   const titleEl = document.querySelector('#eventi .section-title')
   if (titleEl) titleEl.textContent = ui.sections.events
 
-  list.innerHTML = config.events.filter(e => !e.past).map(event => {
+  list.innerHTML = config.events.filter(e => !e.past && !e.hidden).map(event => {
     const style = getBrandStyle(event.brandIntensity)
     const brandClass = `brand-${event.brandIntensity}`
     const tbaClass = event.tba ? 'is-tba' : ''
@@ -239,7 +239,7 @@ function populatePastEvents(config, lang) {
   const titleEl = document.querySelector('#eventi-passati .section-title')
   if (titleEl) titleEl.textContent = ui.pastEvents.title
 
-  const pastEvents = config.events.filter(e => e.past)
+  const pastEvents = config.events.filter(e => e.past && !e.hidden)
   if (pastEvents.length === 0) {
     if (section) section.style.display = 'none'
     return
@@ -483,7 +483,7 @@ function populateStickyBar(config, lang) {
   const ui = config.ui[lang]
   const now = new Date()
   const upcoming = config.events
-    .filter(e => new Date(e.dateISO) >= now && !e.soldOut && !e.tba)
+    .filter(e => new Date(e.dateISO) >= now && !e.soldOut && !e.tba && !e.hidden)
     .sort((a, b) => new Date(a.dateISO) - new Date(b.dateISO))[0]
 
   if (!upcoming) return
