@@ -231,6 +231,27 @@
       "image": "asset/img/01.06%20AURA%20600x600.jpg"
     },
     {
+      "id": "unlocked-gennaro-2026",
+      "brand": "AURA",
+      "eventName": "Unlocked Party presents Gennaro",
+      "brandIntensity": "full",
+      "date": {
+        "it": "11 Luglio",
+        "en": "July 11"
+      },
+      "dateISO": "2026-07-11",
+      "location": {
+        "it": "Villa Bordonaro ai Colli – Palermo",
+        "en": "Villa Bordonaro ai Colli – Palermo"
+      },
+      "artists": ["Gennaro"],
+      "artistsTba": false,
+      "ticketUrl": "https://www.ticketsms.it/event/Unlocked-Presents-Gennaro-Palermo-Villa-Bordonaro-A-Colli-11-07-2026",
+      "soldOut": false,
+      "tba": false,
+      "image": "asset/img/IMG_5792.JPG"
+    },
+    {
       "id": "umf-castellammare-2026",
       "brand": "UMF",
       "eventName": "Unlocked Music Festival",
@@ -256,6 +277,31 @@
       "image": "asset/img/25.07%20UMF%20600X600%20(2)%20(1).jpg"
     },
     {
+      "id": "m2o-night-2026",
+      "brand": "SOLO",
+      "eventName": "m2o Night",
+      "brandIntensity": "muted",
+      "date": {
+        "it": "26 Luglio",
+        "en": "July 26"
+      },
+      "dateISO": "2026-07-26",
+      "location": {
+        "it": "Porto Nuovo, Castellammare del Golfo",
+        "en": "Porto Nuovo, Castellammare del Golfo"
+      },
+      "artists": ["Albertino", "Shorty"],
+      "artistsTba": false,
+      "ticketUrl": "https://www.ticketsms.it/event/M2o-Night-Free-Entry-Castellammare-Del-Golfo-Porto-Nuovo-26-07-2026",
+      "ctaLabel": {
+        "it": "Registrazione gratuita",
+        "en": "Free registration"
+      },
+      "soldOut": false,
+      "tba": false,
+      "image": "asset/img/26.07%20M2O%20NIGHT%20600x600%20(1).jpg"
+    },
+    {
       "id": "aura-gibellina-2026",
       "brand": "AURA",
       "brandIntensity": "full",
@@ -265,15 +311,15 @@
       },
       "dateISO": "2026-08-14",
       "location": {
-        "it": "TBA",
-        "en": "TBA"
+        "it": "Sistema delle Piazze, Gibellina",
+        "en": "Sistema delle Piazze, Gibellina"
       },
-      "artists": [],
-      "artistsTba": true,
-      "ticketUrl": "",
+      "artists": ["Joseph Capriati", "Patrick Topping"],
+      "artistsTba": false,
+      "ticketUrl": "https://www.ticketsms.it/event/Aura-Presents-Joseph-Capriati-And-Patrick-Topping-Gibellina-Sistema-Delle-Piazze-14-08-2026",
       "soldOut": false,
-      "tba": true,
-      "image": "asset/img/14.08%20AURA%20600x600.jpg"
+      "tba": false,
+      "image": "asset/img/14.08%20AURA%20600x600%20con%20ospiti.jpg"
     },
     {
       "id": "unlocked-deborah-2026",

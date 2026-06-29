@@ -198,8 +198,9 @@ function populateEvents(config, lang) {
     } else if (event.tba) {
       actionHtml = `<span class="badge badge-tba">${ui.eventCard.tbaLabel}</span>`
     } else if (event.ticketUrl) {
-      actionHtml = `<a class="card-cta" href="${event.ticketUrl}" target="_blank" rel="noopener" aria-label="${ui.eventCard.ticketsLabel} — ${eventName}">
-        ${ui.eventCard.ticketsLabel} <span aria-hidden="true">→</span>
+      const ctaLabel = event.ctaLabel ? event.ctaLabel[lang] : ui.eventCard.ticketsLabel
+      actionHtml = `<a class="card-cta" href="${event.ticketUrl}" target="_blank" rel="noopener" aria-label="${ctaLabel} — ${eventName}">
+        ${ctaLabel} <span aria-hidden="true">→</span>
       </a>`
     }
 
