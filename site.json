@@ -232,9 +232,9 @@
     },
     {
       "id": "unlocked-gennaro-2026",
-      "brand": "AURA",
+      "brand": "SOLO",
       "eventName": "Unlocked Party presents Gennaro",
-      "brandIntensity": "full",
+      "brandIntensity": "muted",
       "date": {
         "it": "11 Luglio",
         "en": "July 11"

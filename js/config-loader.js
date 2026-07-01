@@ -491,7 +491,7 @@ function populateStickyBar(config, lang) {
   const infoEl = document.querySelector('.sticky-bar-info')
   const ctaEl  = document.querySelector('.sticky-bar-cta')
 
-  if (infoEl) infoEl.textContent = `${upcoming.brand} · ${upcoming.date[lang]}`
+  if (infoEl) infoEl.textContent = `${upcoming.eventName || upcoming.brand} · ${upcoming.date[lang]}`
   if (ctaEl) {
     ctaEl.textContent = `${ui.eventCard.ticketsLabel} →`
     ctaEl.href = upcoming.ticketUrl || '#eventi'
