@@ -184,7 +184,12 @@
       "Enrico Sangiuliano",
       "Sven Väth",
       "Silvie Loto",
-      "Marco Tropeano"
+      "Marco Tropeano",
+      "Joseph Capriati",
+      "Francesco Del Garda",
+      "Traumer",
+      "Josh Baker",
+      "Deborah De Luca"
     ]
   },
   "events": [
@@ -249,6 +254,7 @@
       "ticketUrl": "https://www.ticketsms.it/event/Unlocked-Presents-Gennaro-Palermo-Villa-Bordonaro-A-Colli-11-07-2026",
       "soldOut": false,
       "tba": false,
+      "past": true,
       "image": "asset/img/IMG_5792.JPG"
     },
     {
@@ -274,6 +280,7 @@
       "ticketUrl": "https://www.ticketsms.it/event/unlocked-music-festival-day-1-2026",
       "soldOut": false,
       "tba": false,
+      "past": true,
       "image": "asset/img/25.07%20UMF%20600X600%20(2)%20(1).jpg"
     },
     {
@@ -299,6 +306,7 @@
       },
       "soldOut": false,
       "tba": false,
+      "past": true,
       "image": "asset/img/26.07%20M2O%20NIGHT%20600x600%20(1).jpg"
     },
     {
@@ -319,6 +327,7 @@
       "ticketUrl": "https://www.ticketsms.it/event/Aura-Presents-Joseph-Capriati-And-Patrick-Topping-Gibellina-Sistema-Delle-Piazze-14-08-2026",
       "soldOut": false,
       "tba": false,
+      "past": true,
       "image": "asset/img/14.08%20AURA%20600x600%20con%20ospiti%20(2).jpg"
     },
     {
@@ -340,27 +349,29 @@
       "ticketUrl": "https://www.ticketsms.it/event/Unlocked-Party-Deborah-De-Luca-Alcamo-22-08-2026",
       "soldOut": false,
       "tba": false,
+      "past": true,
       "image": "asset/img/22.08%20UNLOCKED%20600x600.jpg"
     },
     {
-      "id": "aura-settembre-2026",
-      "brand": "AURA",
-      "brandIntensity": "full",
+      "id": "monsterland-imola-2026",
+      "brand": "SOLO",
+      "eventName": "Monsterland Halloween Festival 2026",
+      "brandIntensity": "muted",
       "date": {
-        "it": "19 Settembre",
-        "en": "September 19"
+        "it": "31 Ottobre",
+        "en": "October 31"
       },
-      "dateISO": "2026-09-19",
+      "dateISO": "2026-10-31T15:00:00+01:00",
       "location": {
-        "it": "TBA",
-        "en": "TBA"
+        "it": "Autodromo Enzo e Dino Ferrari – Imola",
+        "en": "Enzo e Dino Ferrari Racetrack – Imola"
       },
       "artists": [],
-      "artistsTba": true,
-      "ticketUrl": "",
+      "artistsTba": false,
+      "ticketUrl": "https://www.ticketsms.it/event/WF2CSIjN",
       "soldOut": false,
-      "tba": true,
-      "image": "asset/img/19.09%20AURA%20600x600.jpg"
+      "tba": false,
+      "image": "asset/img/31.10%20MONSTERLAND%20600x600.jpg"
     }
   ],
   "brands": {
@@ -576,6 +587,31 @@
         "year": 2026,
         "headliner": "Aura in the City — Richie Hawtin",
         "location": "1 Giugno · Palazzina Cinese, Palermo"
+      },
+      {
+        "year": 2026,
+        "headliner": "Unlocked Music Festival — Marco Carola",
+        "location": "25 Luglio · Porto Nuovo, Castellammare del Golfo"
+      },
+      {
+        "year": 2026,
+        "headliner": "m2o Night — Fargetta, Albertino, Shorty",
+        "location": "26 Luglio · Porto Nuovo, Castellammare del Golfo"
+      },
+      {
+        "year": 2026,
+        "headliner": "AURA — Joseph Capriati + Patrick Topping",
+        "location": "14 Agosto · Sistema delle Piazze, Gibellina"
+      },
+      {
+        "year": 2026,
+        "headliner": "Unlocked Party — Deborah De Luca",
+        "location": "22 Agosto · Castello dei Conti di Modica, Alcamo"
+      },
+      {
+        "year": 2026,
+        "headliner": "Monsterland Halloween Festival",
+        "location": "31 Ottobre · Autodromo Enzo e Dino Ferrari, Imola"
       }
     ]
   }

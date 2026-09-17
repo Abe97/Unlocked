@@ -53,14 +53,15 @@ function populateHero(config, lang) {
 
   const labelEl   = eventBlock.querySelector('.hero-event-label')
   const logoEl    = eventBlock.querySelector('.hero-brand-logo')
+  const nameEl    = eventBlock.querySelector('.hero-event-name')
   const dateEl    = eventBlock.querySelector('.hero-event-date')
   const locEl     = eventBlock.querySelector('.hero-event-location')
   const tagEl     = eventBlock.querySelector('.hero-tag')
   const ctaEl     = eventBlock.querySelector('.hero-cta')
 
   if (labelEl) labelEl.textContent = ui.hero.nextEventLabel
+  const logoSrc = getBrandLogo(upcoming.brand)
   if (logoEl) {
-    const logoSrc = getBrandLogo(upcoming.brand)
     if (logoSrc) {
       logoEl.src = logoSrc
       logoEl.alt = upcoming.brand
@@ -68,6 +69,10 @@ function populateHero(config, lang) {
     } else {
       logoEl.style.display = 'none'
     }
+  }
+  if (nameEl) {
+    nameEl.textContent = upcoming.eventName || upcoming.brand
+    nameEl.style.display = logoSrc ? 'none' : 'block'
   }
   if (dateEl)  {
     dateEl.textContent = upcoming.date[lang]
@@ -89,11 +94,15 @@ function populateHero(config, lang) {
   // CTA secondary
   const ctaSecondary = eventBlock.querySelector('.hero-cta-secondary')
   if (ctaSecondary) {
-    ctaSecondary.textContent = ui.hero.ctaSecondary
-    if (ui.hero.ctaSecondaryUrl) {
-      ctaSecondary.href = ui.hero.ctaSecondaryUrl
+    const secondaryUrl = upcoming.websiteUrl || (upcoming.brand === 'AURA' ? ui.hero.ctaSecondaryUrl : '')
+    if (secondaryUrl) {
+      ctaSecondary.style.display = ''
+      ctaSecondary.textContent = ui.hero.ctaSecondary
+      ctaSecondary.href = secondaryUrl
       ctaSecondary.target = '_blank'
       ctaSecondary.rel = 'noopener noreferrer'
+    } else {
+      ctaSecondary.style.display = 'none'
     }
   }
 

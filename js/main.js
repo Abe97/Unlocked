@@ -129,13 +129,13 @@
   // ── Re-animate cursor on new dynamic elements ─────────────────────
   // Delegate hover events to document for dynamically added elements
   document.addEventListener('mouseenter', (e) => {
-    if (e.target.matches('a, button, .event-card, .brand-panel, .sponsor-card')) {
+    if (e.target instanceof Element && Element.prototype.matches.call(e.target, 'a, button, .event-card, .brand-panel, .sponsor-card')) {
       gsap?.to('.cursor', { scale: 2.5, duration: 0.3, ease: 'power2.out' })
     }
   }, true)
 
   document.addEventListener('mouseleave', (e) => {
-    if (e.target.matches('a, button, .event-card, .brand-panel, .sponsor-card')) {
+    if (e.target instanceof Element && Element.prototype.matches.call(e.target, 'a, button, .event-card, .brand-panel, .sponsor-card')) {
       gsap?.to('.cursor', { scale: 1, duration: 0.3, ease: 'power2.out' })
     }
   }, true)

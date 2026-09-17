@@ -215,6 +215,16 @@
   color: var(--cream);
 }
 
+.hero-event-name {
+  display: none;
+  max-width: 460px;
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  color: var(--cream);
+}
+
 .hero-event-location {
   font-size: 11px;
   font-weight: 400;
